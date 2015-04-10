@@ -43,3 +43,6 @@ Temporary Items
 .apdisk
 Edge of Space/Library/
 Edge of Space/Temp/
+*.userprefs
+*.sln
+*.csproj
