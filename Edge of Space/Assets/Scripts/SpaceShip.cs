@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -7,13 +8,17 @@ public class SpaceShip : MonoBehaviour
 	private Rigidbody2D _myRigidbody2D;
 
 	[SerializeField] private float _speed;
-
+	public EnergyCore MyEnergyCore { get; private set; }
+	
 	void Start()
 	{
+		if (MyEnergyCore == null)
+		{
+			MyEnergyCore = gameObject.AddComponent<EnergyCore>();
+		}
 		_myRigidbody2D = GetComponent<Rigidbody2D>();
 	}
 
-	
 	void FixedUpdate ()
 	{
 		RotateToMouse();
@@ -25,7 +30,6 @@ public class SpaceShip : MonoBehaviour
 		Vector2 forceVector = Vector3.zero;
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
-			print(_myRigidbody2D.velocity.magnitude);
 			if (_myRigidbody2D.velocity.magnitude > 0.35f)
 				forceVector = _myRigidbody2D.velocity*-1;
 			else
