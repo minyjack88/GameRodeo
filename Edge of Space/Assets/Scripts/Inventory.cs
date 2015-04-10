@@ -21,14 +21,28 @@ public class Inventory : MonoBehaviour {
 	void Update () {
 	
 	}
-
+    /*
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("Collison with something!");
         if (collision.gameObject.layer == pickUpLayer)
         {
             collision.gameObject.GetComponent<PickupableItem>().PickupItem(this);
+            Debug.Log("THE RIGHT ONE!");
         }
 
+    }
+    */
+    void OnTriggerEnter2D(Collider2D other)
+    {
+      //  Destroy(other.gameObject);
+        Debug.Log("Collison with something!");
+        if (other.gameObject.layer == pickUpLayer)
+        {
+            other.gameObject.GetComponent<PickupableItem>().PickupItem(this);
+            Debug.Log("THE RIGHT ONE!");
+            Destroy(other.gameObject);
+        }
     }
 
     public void AddScrap(int amount)
