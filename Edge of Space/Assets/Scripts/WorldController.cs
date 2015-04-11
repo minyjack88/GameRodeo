@@ -80,26 +80,13 @@ public class WorldController : MonoBehaviour
 		
 		if (forceFactor < 1f)
 		{
-//			uplift = (transform.position - go.transform.position).normalized* (forceFactor - goRigid.velocity.magnitude*((bounceDamp/1)*Time.deltaTime));
-//		}
-//		else
-//		{
-//			print("first: " + forceFactor);
 			forceFactor = floatLevel - dist * -1;
-//			print("second: " + forceFactor);
 			
 //			uplift = -((go.transform.position - transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 10) * Time.fixedDeltaTime)));
 			float val = Mathf.Sqrt(dist - floatLevel);
 			if (float.IsNaN(val))
 				val = 0;
-//			print(val);
 			uplift = -((go.transform.position - transform.position).normalized * ( forceFactor - goRigid.velocity.magnitude * (val)));
-//			print("Dist : " + dist + ", forceFactor: " + forceFactor + ", floatLevel : " + floatLevel);
-
-
-
-//			print("result : " + (forceFactor - goRigid.velocity.magnitude) + ", ForceFactor : " + forceFactor + ", velocity : " + goRigid.velocity.magnitude);
-//			Debug.DrawRay(go.transform.position, uplift.normalized * 3);
 		}
 		return uplift;
 	}
