@@ -59,6 +59,7 @@ public class WorldController : MonoBehaviour
 			var c = (Vector2)(transform.position) + step2;
 			
 			var targetDirection = (Vector2)go.transform.position - c * 0.02f;
+//			var targetDirection = Vector2.zero;
 
 			float dist = Vector2.Distance(transform.position, go.transform.position);
 			
@@ -68,26 +69,38 @@ public class WorldController : MonoBehaviour
 		}
 
 	}
-	Vector2 CalcBouyancy (GameObject go, float floatLevel, Rigidbody2D goRigid, float dist, Vector2 targetDirection) {
-//		float waterLevel = 0.0f; //The actual height
-		float floatHeight = 1.0f; //How "heavy" the object should be in the water
+	Vector2 CalcBouyancy (GameObject go, float preSetDistance, Rigidbody2D goRigid, float dist, Vector2 targetDirection) {
+//		float floatHeight = 1.0f; //How "heavy" the object should be in the water
+//		
+//		Vector2 actionPoint = go.transform.position;
+//		Vector2 uplift = Vector2.zero;
+//		
+		float forceFactor = (1f - (dist - preSetDistance));
+////		forceFactor = (1f - ((actionPoint.y - waterLevel) / floatHeight)) / bPoints.Length;
+//		
+//		if (forceFactor < 1f)
+//		{
+//			forceFactor = preSetDistance - dist * -1;
+//			
+////			uplift = -((go.transform.position - transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 10) * Time.fixedDeltaTime)));
+//			float val = Mathf.Sqrt(dist - preSetDistance) / 2;
+//			if (float.IsNaN(val))
+//				val = 0;
+//			uplift = -((go.transform.position - transform.position).normalized * ( forceFactor - goRigid.velocity.magnitude * (val)));
+//		}
+
+		Vector2 wantedPosition = (go.transform.position - transform.position).normalized * preSetDistance;
+		Debug.DrawLine(go.transform.position, wantedPosition, Color.red);
+
+		Vector2 wantedVector2 = (wantedPosition - (Vector2)go.transform.position);
+//		Vector2 wantedForce = Vector2.Lerp(go.transform.position, wantedPosition, 0.5f);
+		Debug.DrawRay(go.transform.position, wantedVector2, Color.green);
 		
-		Vector2 actionPoint = go.transform.position;
-		Vector2 uplift = Vector2.zero;
+		Vector2 uplift = wantedVector2 * 100;
 		
-		float forceFactor = (1f - (dist - floatLevel));
-//		forceFactor = (1f - ((actionPoint.y - waterLevel) / floatHeight)) / bPoints.Length;
 		
-		if (forceFactor < 1f)
-		{
-			forceFactor = floatLevel - dist * -1;
-			
-//			uplift = -((go.transform.position - transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 10) * Time.fixedDeltaTime)));
-			float val = Mathf.Sqrt(dist - floatLevel);
-			if (float.IsNaN(val))
-				val = 0;
-			uplift = -((go.transform.position - transform.position).normalized * ( forceFactor - goRigid.velocity.magnitude * (val)));
-		}
+		
+		//Instead, how about calculating my wanted point and then calculating a force based on a lerp?
 		return uplift;
 	}
 }
