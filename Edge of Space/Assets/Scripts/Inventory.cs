@@ -7,6 +7,10 @@ public enum ArtifactType {Blink, Battery, Overdrive}
 
 public class Inventory : MonoBehaviour {
 
+    public int baseCargoHoldSpace;
+    public int baseEnergy;
+    public int baseThrusterPower;
+
     public int scrap = 0;
     public int money = 0;
     public List<ArtifactType> artifacts = new List<ArtifactType>();
