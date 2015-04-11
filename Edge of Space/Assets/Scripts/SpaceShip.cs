@@ -29,12 +29,17 @@ public class SpaceShip : MonoBehaviour
 
 	void Start()
 	{
-		if (MyEnergyCore == null)
-		{
-			MyEnergyCore = gameObject.AddComponent<EnergyCore>();
-		}
-		_myRigidbody2D = GetComponent<Rigidbody2D>();
+
 	}
+
+    void Awake()
+    {
+        if (MyEnergyCore == null)
+        {
+            MyEnergyCore = gameObject.AddComponent<EnergyCore>();
+        }
+        _myRigidbody2D = GetComponent<Rigidbody2D>();
+    }
 
 	void FixedUpdate ()
 	{

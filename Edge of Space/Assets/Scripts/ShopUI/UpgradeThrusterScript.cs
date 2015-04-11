@@ -13,6 +13,7 @@ public class UpgradeThrusterScript : UpgradeScript
         describtionText = "Increases the power of your ships thruster.";
         UpdateUpgradeInfo();
         UpdateDescription();
+        UpdatePlayer();
     }
 
     public override void UpdateUpgradeInfo()

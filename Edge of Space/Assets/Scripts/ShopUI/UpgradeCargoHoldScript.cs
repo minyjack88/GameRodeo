@@ -13,6 +13,7 @@ public class UpgradeCargoHoldScript : UpgradeScript
         describtionText = "Increases the amount of cargo your ship can carry.";
         UpdateUpgradeInfo();
         UpdateDescription();
+        UpdatePlayer();
     }
 
     public override void UpdateUpgradeInfo()

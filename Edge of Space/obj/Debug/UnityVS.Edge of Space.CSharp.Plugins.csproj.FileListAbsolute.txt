@@ -10,3 +10,4 @@ C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\U
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\UnityVS.Edge of Space.CSharp.Plugins.csprojResolveAssemblyReference.cache

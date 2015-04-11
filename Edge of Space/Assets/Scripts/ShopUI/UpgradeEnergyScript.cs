@@ -13,6 +13,7 @@ public class UpgradeEnergyScript : UpgradeScript
         describtionText = "Increases the maximum amount of energy your ship has.";
         UpdateUpgradeInfo();
         UpdateDescription();
+        UpdatePlayer();
     }
 
     public override void UpdateUpgradeInfo()
