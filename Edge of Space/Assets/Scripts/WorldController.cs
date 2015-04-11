@@ -8,6 +8,7 @@ public class WorldController : MonoBehaviour
 	private List<GameObject> _allGOs;
 	private float _radius;
 	[SerializeField] private float _rotationalForce = 10;
+	[SerializeField] private float bounceDamp = 0.000005f; //how rapidly it bounces
 
 	private GameObject _playerGo;
 	public GameObject PlayerGo
@@ -57,36 +58,48 @@ public class WorldController : MonoBehaviour
 			var step2 = new Vector2(step1.y, -step1.x);
 			var c = (Vector2)(transform.position) + step2;
 			
-			var targetDirection = (Vector2)go.transform.position - c * 0.2f;
+			var targetDirection = (Vector2)go.transform.position - c * 0.02f;
 
 			float dist = Vector2.Distance(transform.position, go.transform.position);
-//			targetDirection -= (Vector2)(go.transform.position - transform.position).normalized * (dist - goInitialDistance) * 10;
-
-			targetDirection += CalcBouyancy(go, goInitialDistance, goRigid, dist);
+			
+			targetDirection += CalcBouyancy(go, goInitialDistance, goRigid, dist, targetDirection);
 
 			goRigid.AddForce(targetDirection);
 		}
 
 	}
-	Vector2 CalcBouyancy (GameObject go, float floatLevel, Rigidbody2D goRigid, float dist) {
+	Vector2 CalcBouyancy (GameObject go, float floatLevel, Rigidbody2D goRigid, float dist, Vector2 targetDirection) {
 //		float waterLevel = 0.0f; //The actual height
 		float floatHeight = 1.0f; //How "heavy" the object should be in the water
-		float bounceDamp = 0.05f; //how rapidly it bounces
 		
 		Vector2 actionPoint = go.transform.position;
-		Vector2 uplift;
+		Vector2 uplift = Vector2.zero;
 		
 		float forceFactor = (1f - (dist - floatLevel));
 //		forceFactor = (1f - ((actionPoint.y - waterLevel) / floatHeight)) / bPoints.Length;
 		
-		if (forceFactor > 1f)
+		if (forceFactor < 1f)
 		{
-			uplift = (transform.position - go.transform.position).normalized* (forceFactor - goRigid.velocity.magnitude*((bounceDamp/1)*Time.deltaTime));
-		}
-		else
-		{
+//			uplift = (transform.position - go.transform.position).normalized* (forceFactor - goRigid.velocity.magnitude*((bounceDamp/1)*Time.deltaTime));
+//		}
+//		else
+//		{
+//			print("first: " + forceFactor);
 			forceFactor = floatLevel - dist * -1;
-			uplift = -((go.transform.position - transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 1) * Time.deltaTime)));
+//			print("second: " + forceFactor);
+			
+//			uplift = -((go.transform.position - transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 10) * Time.fixedDeltaTime)));
+			float val = Mathf.Sqrt(dist - floatLevel);
+			if (float.IsNaN(val))
+				val = 0;
+//			print(val);
+			uplift = -((go.transform.position - transform.position).normalized * ( forceFactor - goRigid.velocity.magnitude * (val)));
+//			print("Dist : " + dist + ", forceFactor: " + forceFactor + ", floatLevel : " + floatLevel);
+
+
+
+//			print("result : " + (forceFactor - goRigid.velocity.magnitude) + ", ForceFactor : " + forceFactor + ", velocity : " + goRigid.velocity.magnitude);
+//			Debug.DrawRay(go.transform.position, uplift.normalized * 3);
 		}
 		return uplift;
 	}

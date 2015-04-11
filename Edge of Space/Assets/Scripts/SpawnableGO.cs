@@ -4,7 +4,7 @@ using System.Collections;
 public class SpawnableGO : MonoBehaviour
 {
 	[SerializeField] private int _rarity;
-	public float InitialDistance { get; set; }
+	[SerializeField] public float InitialDistance;
 
 	public int GetRarity()
 	{

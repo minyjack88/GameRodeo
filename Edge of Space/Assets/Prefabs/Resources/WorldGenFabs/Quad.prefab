@@ -13,6 +13,7 @@ GameObject:
   - 114: {fileID: 11426966}
   - 50: {fileID: 5001642}
   - 247: {fileID: 24751590}
+  - 58: {fileID: 5866150}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -78,6 +79,19 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!58 &5866150
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129412}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: .5
 --- !u!114 &11426966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b909b2711e0a6c44b46b15d8f935eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rarity: 50
+  _rarity: 100
+  InitialDistance: 0
 --- !u!247 &24751590
 ConstantForce2D:
   m_ObjectHideFlags: 1

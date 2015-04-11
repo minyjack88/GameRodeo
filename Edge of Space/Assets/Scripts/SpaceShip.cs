@@ -46,7 +46,7 @@ public class SpaceShip : MonoBehaviour
 		
 		_myRigidbody2D.AddForce(forceVector);
 	}
-
+	
 	[SerializeField] private Vector3 _mousPos;
 
 	void RotateToMouse()
