@@ -285,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anomalyCenter: {x: 0, y: 0}
   _radius: 50
-  _complexity: 11
+  _complexity: 100
   _anomArrow: {fileID: 0}
 --- !u!4 &606992971
 Transform:

@@ -7,9 +7,9 @@ public class EnergyCore : MonoBehaviour
 	[SerializeField]
 	private float _energyLevel = 100;
 
-	public void DoDamage(float damageAmount, float deltaTime)
+	public void DoDamage(float damageAmount)
 	{
-		_energyLevel -= damageAmount * deltaTime;
+		_energyLevel -= damageAmount * Time.deltaTime;
 	}
 
 	public float GetEnergyLevel()
