@@ -3560,7 +3560,7 @@ MonoBehaviour:
   messageScript: {fileID: 0}
   female: {fileID: 21300000, guid: 9380eac743b699b44a8e667e0a455e47, type: 3}
   male: {fileID: 21300000, guid: e28569b87fe0f764bb802635e58a8288, type: 3}
-  help: {fileID: 0}
+  help: {fileID: 21300000, guid: 6a29047fa845beb4e85a71a052bc9c57, type: 3}
   usedTypes: 
 --- !u!4 &1678360844
 Transform:
