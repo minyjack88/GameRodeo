@@ -9,6 +9,7 @@ public class Trac : Pulling {
 
     void Start()
     {
+        cs = CenterObject.GetComponent<CenterStats>();
         myCollider = GetComponent<PolygonCollider2D>();
         SetSize(startSize);
         gameObject.SetActive(false);

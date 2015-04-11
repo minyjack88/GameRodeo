@@ -6,7 +6,7 @@ public class Pulling : MonoBehaviour
 
     public GameObject CenterObject;
     public int PullabledLayer;
-    private CenterStats cs;
+    protected CenterStats cs;
 
     void start()
     {

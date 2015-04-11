@@ -6,13 +6,7 @@ public class PlayerTacS : CenterStats
 
     public KeyCode TracKey = KeyCode.Mouse0;
     public GameObject TracBeam;
-    private CenterStats cs;
 
-    void start()
-    {
-        cs = GetComponent<CenterStats>();
-    }
-    
     void Update()
     {
         if (Input.GetKeyDown(TracKey))
@@ -23,7 +17,7 @@ public class PlayerTacS : CenterStats
         if (Input.GetKeyUp(TracKey))
         {
             TracBeam.SetActive(false);
-            cs.pullingObject.Clear();
+            pullingObject.Clear();
         }
     }
 
