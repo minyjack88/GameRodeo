@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Logans test.unity
   - enabled: 1
     path: Assets/Scenes/GameWon.unity
+  - enabled: 1
+    path: Assets/Scenes/GameLevel.unity

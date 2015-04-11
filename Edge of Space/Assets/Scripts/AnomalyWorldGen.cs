@@ -6,8 +6,9 @@ using System.Collections;
 public class AnomalyWorldGen : MonoBehaviour
 {
 	[SerializeField] private Vector2 _anomalyCenter;
-	[SerializeField] private float radius;
+	[SerializeField] private float _radius;
 	[SerializeField] private int _complexity;
+	[SerializeField] private BaseArrowScript _anomArrow;
 	
 	void Start ()
 	{
@@ -18,7 +19,7 @@ public class AnomalyWorldGen : MonoBehaviour
 		
 		var allObjects = new List<GameObject>();
 		var anonCont = anomalousWorldGo.AddComponent<WorldController>();
-
+		_anomArrow.GetComponent<BaseArrowScript>().track = anomalousWorldGo;
 		foreach (var o in spawnablePrefabs)
 		{
 			var prefab = (GameObject) o;
@@ -27,7 +28,7 @@ public class AnomalyWorldGen : MonoBehaviour
 			for (int i = 0; i < count; i++)
 			{
 				float randDir = Random.Range(0, 360) * Mathf.PI / 180;
-				float randLength = Random.Range(0, radius);
+				float randLength = Random.Range(0, _radius);
 				var randPos = new Vector2(randLength * Mathf.Cos(randDir) + _anomalyCenter.x, randLength * Mathf.Sin(randDir) + _anomalyCenter.y); 
 				
 				GameObject go = (GameObject)Instantiate(prefab, randPos, Quaternion.identity);
@@ -35,6 +36,6 @@ public class AnomalyWorldGen : MonoBehaviour
 				allObjects.Add(go);
 			}
 		}
-		anonCont.SetInitialInfo(radius, allObjects);
+		anonCont.SetInitialInfo(_radius, allObjects);
 	}
 }
