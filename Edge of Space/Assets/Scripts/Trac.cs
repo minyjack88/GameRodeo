@@ -6,6 +6,7 @@ public class Trac : Pulling {
     private PolygonCollider2D myCollider;
     public float startSize = 3;
     private float size;
+    
 
     void Start()
     {
@@ -14,7 +15,6 @@ public class Trac : Pulling {
         SetSize(startSize);
         gameObject.SetActive(false);
     }
-
 
 
     public void SetSize(float newSize)
