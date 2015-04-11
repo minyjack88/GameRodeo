@@ -43,8 +43,15 @@ Temporary Items
 .apdisk
 Edge of Space/Library/
 Edge of Space/Temp/
+Edge of Space/UnityGenerated/
+Edge of Space/Assets/AssetStoreTools*
 *.userprefs
+*.svd
+*.pidb
+*.suo
 *.sln
+*.user
+*.booproj
 *.csproj
 <<<<<<< HEAD
 *.unityproj
