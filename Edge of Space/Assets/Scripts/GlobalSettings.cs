@@ -3,8 +3,8 @@ using System.Collections;
 
 public static class GlobalSettings  {
 
-    [SerializeField]
-    private static MessageManager messageManager;
+    
+    public static MessageManager messageManager;
 
     public static void TogglePause(bool pause)
     {
