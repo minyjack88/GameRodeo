@@ -19,7 +19,8 @@ public class AnomalyWorldGen : MonoBehaviour
 		
 		var allObjects = new List<GameObject>();
 		var anonCont = anomalousWorldGo.AddComponent<WorldController>();
-		_anomArrow.GetComponent<BaseArrowScript>().track = anomalousWorldGo;
+		if(_anomArrow != null)
+			_anomArrow.GetComponent<BaseArrowScript>().track = anomalousWorldGo;
 		foreach (var o in spawnablePrefabs)
 		{
 			var prefab = (GameObject) o;
