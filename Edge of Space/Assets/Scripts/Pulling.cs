@@ -5,7 +5,7 @@ public class Pulling : MonoBehaviour
 {
 
     public GameObject CenterObject;
-    public int PullabledLayer;
+    public int[] PullabledLayers;
     protected CenterStats cs;
 
     void start()
@@ -16,18 +16,26 @@ public class Pulling : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.layer == PullabledLayer)
+        foreach (int pullLayer in PullabledLayers)
         {
-            cs.pullingObject.Add(coll.GetComponent<Rigidbody2D>());
+            if (coll.gameObject.layer == pullLayer)
+            {
+                cs.pullingObject.Add(coll.GetComponent<Rigidbody2D>());
+            }
         }
+
     }
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.gameObject.layer == PullabledLayer)
+        foreach (int pullLayer in PullabledLayers)
         {
-            cs.pullingObject.Remove(coll.GetComponent<Rigidbody2D>());
+            if (coll.gameObject.layer == pullLayer)
+            {
+                cs.pullingObject.Remove(coll.GetComponent<Rigidbody2D>());
+            }
         }
+
     }
                 
 }
