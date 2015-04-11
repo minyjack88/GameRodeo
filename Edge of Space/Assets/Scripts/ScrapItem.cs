@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class ScrapItem : PickupableItem
 {
-
-    public int size;
+    [NonSerialized]
+    public float size;
     public int baseScrapValue;
 
-	// Use this for initialization
-	void Start () {
+    void Awake()
+    {
+        size = UnityEngine.Random.Range(0.2f, 1);
+        this.gameObject.transform.localScale *= size;
+    }
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     public override void PickupItem(Inventory inventory)
     {
         inventory.AddScrap((int)(baseScrapValue * size));
