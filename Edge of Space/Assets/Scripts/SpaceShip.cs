@@ -6,6 +6,7 @@ using System.Collections;
 public class SpaceShip : MonoBehaviour
 {
 	private Rigidbody2D _myRigidbody2D;
+	public bool IsDead = false;
 
 	[SerializeField] private float _speed;
 	public EnergyCore MyEnergyCore { get; private set; }
@@ -46,6 +47,16 @@ public class SpaceShip : MonoBehaviour
 		
 		_myRigidbody2D.AddForce(forceVector);
 	}
+
+	void Update()
+	{
+		if (!IsDead && MyEnergyCore.GetEnergyLevel() <= 0)
+		{
+			IsDead = true;
+			var hq = GameObject.Find("HQ").GetComponent<Respawner>();
+			hq.Die(this);
+		}
+	}
 	
 	[SerializeField] private Vector3 _mousPos;
 
@@ -58,5 +69,11 @@ public class SpaceShip : MonoBehaviour
 		var dir = mousePos - transform.position;
 		var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+	}
+
+	public void Respawn()
+	{
+		IsDead = false;
+		MyEnergyCore.ResetPower();
 	}
 }

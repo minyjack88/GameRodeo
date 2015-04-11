@@ -5,7 +5,7 @@ using System.Collections;
 public class EnergyCore : MonoBehaviour
 {
 	[SerializeField]
-	private float _energyLevel = 1;
+	private float _energyLevel = 100;
 
 	public void DoDamage(float damageAmount, float deltaTime)
 	{
@@ -15,5 +15,10 @@ public class EnergyCore : MonoBehaviour
 	public float GetEnergyLevel()
 	{
 		return _energyLevel;
+	}
+
+	public void ResetPower()
+	{
+		_energyLevel = GetComponent<Inventory>().baseEnergy;
 	}
 }
