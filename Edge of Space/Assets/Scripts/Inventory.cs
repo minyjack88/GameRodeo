@@ -7,13 +7,12 @@ public enum ArtifactType {Blink, Battery, Overdrive}
 [RequireComponent(typeof(CenterStats))]
 public class Inventory : MonoBehaviour {
 
-<<<<<<< .merge_file_a19280
-=======
+
     public int baseCargoHoldSpace;
     public int baseEnergy;
     public int baseThrusterPower;
 
->>>>>>> .merge_file_a08972
+
     public int scrap = 0;
     public int money = 0;
     public List<ArtifactType> artifacts = new List<ArtifactType>();
