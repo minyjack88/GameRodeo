@@ -27,3 +27,5 @@ C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\UnityVS.Edge o
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp.dll
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp.pdb
 >>>>>>> .merge_file_a20040
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
