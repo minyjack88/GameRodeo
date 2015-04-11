@@ -17,7 +17,7 @@ public class AnomalyWorldGen : MonoBehaviour
 		anomalousWorldGo.transform.position = _anomalyCenter;
 		
 		var allObjects = new List<GameObject>();
-		var anonCont = anomalousWorldGo.AddComponent<AnomalyController>();
+		var anonCont = anomalousWorldGo.AddComponent<WorldController>();
 
 		foreach (var o in spawnablePrefabs)
 		{
