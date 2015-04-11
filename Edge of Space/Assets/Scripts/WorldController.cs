@@ -75,18 +75,19 @@ public class WorldController : MonoBehaviour
 		
 		Vector2 actionPoint = go.transform.position;
 		Vector2 uplift;
-
+		
 		float forceFactor = (1f - (dist - floatLevel));
 //		forceFactor = (1f - ((actionPoint.y - waterLevel) / floatHeight)) / bPoints.Length;
-
-		if (forceFactor > 10f) {
-			uplift = (transform.position - go.transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 1) * Time.deltaTime));
-			print("uplift : " + uplift + ", forcefactor : " + forceFactor);
-			return uplift;
-//			uplift = -Physics.gravity * (forceFactor - rigidbody.velocity.y * ((bounceDamp / bPoints.Length) * Time.deltaTime));
-//			rigidbody.AddForceAtPosition(uplift, actionPoint, forceMode);
+		
+		if (forceFactor > 1f)
+		{
+			uplift = (transform.position - go.transform.position).normalized* (forceFactor - goRigid.velocity.magnitude*((bounceDamp/1)*Time.deltaTime));
 		}
-		uplift = -(transform.position - go.transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 1) * Time.deltaTime));
+		else
+		{
+			forceFactor = floatLevel - dist * -1;
+			uplift = -((go.transform.position - transform.position).normalized * (forceFactor - goRigid.velocity.magnitude * ((bounceDamp / 1) * Time.deltaTime)));
+		}
 		return uplift;
 	}
 }

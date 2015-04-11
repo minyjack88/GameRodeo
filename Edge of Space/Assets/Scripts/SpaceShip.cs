@@ -9,9 +9,12 @@ public class SpaceShip : MonoBehaviour
 
 	[SerializeField] private float _speed;
 	public EnergyCore MyEnergyCore { get; private set; }
-	
+	private GameObject go;
+
 	void Start()
 	{
+		go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+
 		if (MyEnergyCore == null)
 		{
 			MyEnergyCore = gameObject.AddComponent<EnergyCore>();
@@ -46,11 +49,15 @@ public class SpaceShip : MonoBehaviour
 		
 		_myRigidbody2D.AddForce(forceVector);
 	}
-	
+
+	[SerializeField] private Vector3 _mousPos;
+
 	void RotateToMouse()
 	{
-		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		mousePos.z = 0;
+		_mousPos = Input.mousePosition;
+		_mousPos.z = 35;
+		Vector3 mousePos = Camera.main.ScreenToWorldPoint(_mousPos);
+
 		var dir = mousePos - transform.position;
 		var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
