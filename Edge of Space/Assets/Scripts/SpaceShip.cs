@@ -9,12 +9,9 @@ public class SpaceShip : MonoBehaviour
 
 	[SerializeField] private float _speed;
 	public EnergyCore MyEnergyCore { get; private set; }
-	private GameObject go;
 
 	void Start()
 	{
-		go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
 		if (MyEnergyCore == null)
 		{
 			MyEnergyCore = gameObject.AddComponent<EnergyCore>();
