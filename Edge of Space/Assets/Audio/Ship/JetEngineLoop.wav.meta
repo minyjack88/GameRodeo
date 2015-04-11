@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< .merge_file_a09044
 guid: 036fa8fe1189e1c409377e919fcfd0ce
 timeCreated: 1428746290
+=======
+guid: 5e0fd485644fda2409394a790ccc09f0
+timeCreated: 1428740202
+>>>>>>> .merge_file_a06216
 licenseType: Free
 AudioImporter:
   serializedVersion: 6

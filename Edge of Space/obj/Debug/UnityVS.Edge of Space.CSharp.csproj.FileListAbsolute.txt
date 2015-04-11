@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_a13776
 C:\Edge of space\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
 C:\Edge of space\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
 C:\Edge of space\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.dll
@@ -11,3 +12,18 @@ C:\Edge of space\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.iOS.
 C:\Edge of space\GameRodeo\Edge of Space\obj\Debug\UnityVS.Edge of Space.CSharp.csprojResolveAssemblyReference.cache
 C:\Edge of space\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp.dll
 C:\Edge of space\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp.pdb
+=======
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\UnityVS.Edge of Space.CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp.dll
+C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp.pdb
+>>>>>>> .merge_file_a20040
