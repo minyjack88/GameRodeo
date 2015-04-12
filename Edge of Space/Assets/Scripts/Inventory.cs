@@ -22,6 +22,7 @@ public class Inventory : MonoBehaviour {
     public int energyConsumablePower;
     public int boostConsumablePower;
     public int blinkConsumablePower;
+    public int boostDuration;
 
     public int scrap = 0;
     public int money = 0;

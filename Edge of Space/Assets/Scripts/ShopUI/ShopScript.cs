@@ -39,11 +39,27 @@ public class ShopScript : MonoBehaviour
     private Text BoostConsumableDescriptionText;
 
     [SerializeField]
+    private Button BuyBlinkConsumableButton;
+    [SerializeField]
+    private Image BlinkConsumableImage;
+    [SerializeField]
+    private Button BuyBoostConsumableButton;
+    [SerializeField]
+    private Image BoostConsumableImage;
+    [SerializeField]
+    private Button BuyEnergyConsumableButton;
+    [SerializeField]
+    private Image EnergyConsumableImage;
+
+    [SerializeField]
     private Text resourceText;
 
-	[SerializeField] private AudioClip rechargeClip;
-	[SerializeField] private AudioClip buySoundClip;
-	[SerializeField] private AudioSource mySource;
+    [SerializeField]
+    private AudioClip rechargeClip;
+    [SerializeField]
+    private AudioClip buySoundClip;
+    [SerializeField]
+    private AudioSource mySource;
 
     public int blinkConsumableCost;
     public int boostConsumableCost;
@@ -51,10 +67,10 @@ public class ShopScript : MonoBehaviour
 
 
     // Use this for initialization
-    void Start() 
+    void Start()
     {
         inventory = player.GetComponent<Inventory>();
-		
+
         BlinkConsumableDescriptionText.text = "Consumable: Blink" + System.Environment.NewLine
         + "Instant travel to a nearby location." + System.Environment.NewLine
         + "Cost: " + blinkConsumableCost + System.Environment.NewLine
@@ -66,14 +82,14 @@ public class ShopScript : MonoBehaviour
         + "Cost: " + energyConsumableCost + System.Environment.NewLine
         + "Hotkey: 3" + System.Environment.NewLine
         + "Cooldown: " + inventory.energyCooldown;
-  
+
         BoostConsumableDescriptionText.text = "Consumable: Boost" + System.Environment.NewLine
         + "Temporary boost to thrusters." + System.Environment.NewLine
         + "Cost: " + boostConsumableCost + System.Environment.NewLine
         + "Hotkey: 2" + System.Environment.NewLine
         + "Cooldown: " + inventory.boostCooldown;
-      
-	}
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -85,8 +101,8 @@ public class ShopScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-	        mySource.clip = rechargeClip;
-			mySource.Play();
+            mySource.clip = rechargeClip;
+            mySource.Play();
             Debug.Log("Collision with the base.");
             SellCargo();
             player.GetComponent<EnergyCore>().ResetPower();
@@ -119,15 +135,21 @@ public class ShopScript : MonoBehaviour
                 case ArtifactType.Blink:
                     BlinkArtifactText.text = "Enables you to warp space time, instantly teleporting to a different location.";
                     BlinkArtifactImage.color = Color.white;
+                    BlinkConsumableImage.enabled = true;
+                    BuyBlinkConsumableButton.enabled = true;
                     //Enable consumeable Canvas
                     break;
                 case ArtifactType.Battery:
                     BatteryArtifactText.text = "Unknown technology that allows the compression of energy into a miniscule object.";
                     BatteryArtifactImage.color = Color.white;
+                    EnergyConsumableImage.enabled = true;
+                    BuyEnergyConsumableButton.enabled = true;
                     break;
                 case ArtifactType.Overdrive:
                     OverdriveArtifactText.text = "Allows rapid acceleration boosts at the cost of extra fuel.";
                     OverdriveArtifactImage.color = Color.white;
+                    BoostConsumableImage.enabled = true;
+                    BuyBoostConsumableButton.enabled = true;
                     break;
                 default:
                     break;
@@ -145,8 +167,8 @@ public class ShopScript : MonoBehaviour
         {
             inventory.blinkConsumables++;
             inventory.money -= blinkConsumableCost;
-	        mySource.clip = buySoundClip;
-			mySource.Play();
+            mySource.clip = buySoundClip;
+            mySource.Play();
 
         }
     }
@@ -157,8 +179,8 @@ public class ShopScript : MonoBehaviour
         {
             inventory.boostConsumables++;
             inventory.money -= boostConsumableCost;
-			mySource.clip = buySoundClip;
-			mySource.Play();
+            mySource.clip = buySoundClip;
+            mySource.Play();
         }
     }
 
@@ -168,8 +190,8 @@ public class ShopScript : MonoBehaviour
         {
             inventory.energyConsumables++;
             inventory.money -= energyConsumableCost;
-			mySource.clip = buySoundClip;
-			mySource.Play();
+            mySource.clip = buySoundClip;
+            mySource.Play();
         }
     }
 }

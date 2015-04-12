@@ -21,4 +21,14 @@ public class EnergyCore : MonoBehaviour
 	{
 		_energyLevel = GetComponent<Inventory>().baseEnergy;
 	}
+
+    public void AddEnergy(float amount)
+    {
+        Inventory inventory = GetComponent<Inventory>();
+        _energyLevel += amount;
+        if (inventory.baseEnergy < _energyLevel)
+        {
+            _energyLevel = inventory.baseEnergy;
+        }
+    }
 }

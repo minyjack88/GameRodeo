@@ -50,7 +50,7 @@ public class Thruster : MonoBehaviour
         }
         else
         {
-            sPlayer.Stop(false);
+            sPlayer.Stop(true);
         }
     }
 }
