@@ -27,9 +27,13 @@ public class MessageManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GlobalSettings.messageManager = this;
+        
     }
 
+    void Awake()
+    {
+        GlobalSettings.messageManager = this;
+    }
     
 
     // Update is called once per frame
@@ -80,8 +84,9 @@ public class MessageManager : MonoBehaviour
                     "HQ: \"... And Jackson?\"",
                     "Jackson: \"Yeah?\"",
                     "HQ: \"Be careful.\"",
-                    "Jackson: \"I will, Alice. Jackson out.\""};
-                    sprites = new List<Sprite>() {help, male, female, male, female, male, female, female, male, female, male};
+                    "Jackson: \"I will, Alice. Jackson out.\"",
+                    "*HELP* Reach the middle of the anomaly, the closer to the middle you are, the harsher the environment is."};
+                    sprites = new List<Sprite>() {help, male, female, male, female, male, female, female, male, female, male, help};
                     break;
                 case MessageType.win:
                     texts = new List<string>() {"HQ: \"Jackson?\"",
