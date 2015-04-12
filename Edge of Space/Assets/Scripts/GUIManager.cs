@@ -27,7 +27,7 @@ public class GUIManager : MonoBehaviour {
 	void Update () 
     {
         energyBarImage.fillAmount = (float)(energyCore.GetEnergyLevel() / inventory.baseEnergy);
-        energyText.text = energyCore.GetEnergyLevel() + "/" + inventory.baseEnergy;
+        energyText.text = (int)energyCore.GetEnergyLevel() + "/" + inventory.baseEnergy;
 
         //totally waste of CPU power ftw
         cargoBarImage.fillAmount = (float)inventory.scrap / (float)inventory.baseCargoHoldSpace;

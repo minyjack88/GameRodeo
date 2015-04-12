@@ -48,12 +48,15 @@ public class ShopScript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision with the base.");
-        SellCargo();
-        
+	    if (other.tag == "Player")
+	    {
+			Debug.Log("Collision with the base.");
+			SellCargo();
+			player.GetComponent<EnergyCore>().ResetPower();
 
-        GlobalSettings.TogglePause(true);
-        canvas.SetActive(true);
+			GlobalSettings.TogglePause(true);
+			canvas.SetActive(true);
+	    }
     }
 
     public void ExitShop()

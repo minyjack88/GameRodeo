@@ -22,31 +22,31 @@ public class UpgradeEnergyScript : UpgradeScript
         {
             case 1:
                 upgradeCost = 111;
-                power = 11;
+                power = 100;
                 break;
 
             case 2:
                 upgradeCost = 222;
-                power = 22;
+		        power = 175;
                 break;
 
             case 3:
                 upgradeCost = 333;
-                power = 33;
+                power = 290;
                 break;
 
             case 4:
                 upgradeCost = 444;
-                power = 44;
+                power = 400;
                 break;
 
             case 5:
                 upgradeCost = 555;
-                power = 55;
+                power = 750;
                 break;
 
             case 6:
-                power = 66;
+                power = 750;
                 upgradeable = false;
                 button.SetActive(false);
                 break;
@@ -61,6 +61,7 @@ public class UpgradeEnergyScript : UpgradeScript
     public override void UpdatePlayer()
     {
         inventory.baseEnergy = power;
+		player.GetComponent<EnergyCore>().ResetPower();
     }
 
     public override void UpdateDescription()
