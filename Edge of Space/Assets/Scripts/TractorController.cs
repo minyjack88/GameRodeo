@@ -7,6 +7,7 @@ public class TractorController : CenterStats
     public KeyCode TracKey = KeyCode.Mouse0;
     public GameObject TracBeam;
     private Vector2 lastpostion;
+    public SoundPlayer sPlayer;
 
     public float Speed
     {
@@ -18,12 +19,14 @@ public class TractorController : CenterStats
         if (Input.GetKeyDown(TracKey))
         {
             TracBeam.SetActive(true);
+            sPlayer.Play();
         }
 
         if (Input.GetKeyUp(TracKey))
         {
             TracBeam.SetActive(false);
             pullingObject.Clear();
+            sPlayer.Stop(true);
         }
 		
 

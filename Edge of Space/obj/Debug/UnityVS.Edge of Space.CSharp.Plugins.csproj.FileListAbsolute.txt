@@ -11,3 +11,16 @@ C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\U
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp-firstpass.pdb
 C:\Users\Simon\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\UnityVS.Edge of Space.CSharp.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\Assembly-CSharp-firstpass.pdb
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\Temp\UnityVS_bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\UnityVS.Edge of Space.CSharp.Plugins.csprojResolveAssemblyReference.cache
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp-firstpass.dll
+C:\Users\emil448m.DJES\Documents\GitHub\GameRodeo\Edge of Space\obj\Debug\Assembly-CSharp-firstpass.pdb
