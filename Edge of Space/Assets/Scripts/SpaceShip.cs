@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.ImageEffects;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class SpaceShip : MonoBehaviour
@@ -10,6 +11,21 @@ public class SpaceShip : MonoBehaviour
 
 	[SerializeField] private float _speed;
 	public EnergyCore MyEnergyCore { get; private set; }
+
+	public float CurrentPressure { get; set; }
+	[SerializeField] private VignetteAndChromaticAberration _camVignette;
+
+	[SerializeField] private WorldController worldController;
+
+	private WorldController WorldController
+	{
+		get
+		{
+			if (worldController == null)
+				worldController = GameObject.Find("Anomalous world GO").GetComponent<WorldController>();
+			return worldController;
+		}
+	}
 
 	void Start()
 	{
@@ -55,6 +71,19 @@ public class SpaceShip : MonoBehaviour
 
 	void Update()
 	{
+		if (CurrentPressure > 0)
+		{
+			MyEnergyCore.DoDamage(CurrentPressure);
+			_camVignette.intensity = Mathf.Lerp(0, 20, CurrentPressure / WorldController._radius);
+			print(CurrentPressure / WorldController._radius);
+
+		}
+		else
+		{
+			_camVignette.intensity = 0;
+		}
+
+
 		if (!IsDead && MyEnergyCore.GetEnergyLevel() <= 0)
 		{
 			IsDead = true;

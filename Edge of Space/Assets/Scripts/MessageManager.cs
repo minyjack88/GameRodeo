@@ -17,7 +17,6 @@ public class MessageManager : MonoBehaviour
     private List<string> texts;
     bool messageInProgress = false;
 
-    public MessageScript messageScript;
     public Sprite female;
     public Sprite male;
     public Sprite help;

@@ -27,6 +27,4 @@ public class CenterStats : MonoBehaviour
     {
         rb.AddForce((transform.position - rb.transform.position).normalized * pullForceAmount * Time.smoothDeltaTime);
     }
-
-
 }
