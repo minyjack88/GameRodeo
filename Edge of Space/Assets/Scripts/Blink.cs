@@ -3,15 +3,29 @@ using System.Collections;
 
 public class Blink : MonoBehaviour 
 {
+    public GameObject player;
+    private Inventory inventory;
+    private float timer;
+
     public KeyCode activetKey;
     public Camera cam;
     public ParticleSystem ps;
     private bool LastFramePlay = false;
 
+    void Start()
+    {
+        inventory = player.GetComponent<Inventory>();
+        timer = inventory.blinkCooldown;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(activetKey))
+        timer -= Time.deltaTime;
+
+        if (inventory.blinkConsumables > 0 && timer <= 0 && Input.GetKeyDown(activetKey))
         {
+            inventory.blinkConsumables--;
+            timer = inventory.blinkCooldown;
             ps.Play();
         }
 
