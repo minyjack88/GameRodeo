@@ -12,6 +12,8 @@ public class SpaceShip : MonoBehaviour
 	[SerializeField] private float _speed;
 	public EnergyCore MyEnergyCore { get; private set; }
 
+	[SerializeField] private GameObject _explosion;
+
 	public float CurrentPressure { get; set; }
 	[SerializeField] private VignetteAndChromaticAberration _camVignette;
 
@@ -88,6 +90,8 @@ public class SpaceShip : MonoBehaviour
 		{
 			IsDead = true;
 			var hq = GameObject.Find("HQ").GetComponent<Respawner>();
+			var go =(GameObject)Instantiate(_explosion, transform.position, Quaternion.identity);
+			Destroy(go, 3);
 			hq.Die(this);
 		}
 	}
