@@ -94,8 +94,11 @@ public class SpaceShip : MonoBehaviour
 		}
 		else
 		{
-            if (_camVignette != null)
-				_camVignette.intensity = 0;
+			if (_camVignette != null)
+			{
+				_camVignette.intensity = Mathf.Lerp(_camVignette.intensity, 0, Time.deltaTime);
+//				_camVignette.intensity = 0;
+			}
 		}
 
 

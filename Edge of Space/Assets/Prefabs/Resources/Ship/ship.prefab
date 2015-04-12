@@ -64,7 +64,6 @@ GameObject:
   - 114: {fileID: 11406470}
   - 114: {fileID: 11419016}
   - 114: {fileID: 11492752}
-  - 81: {fileID: 8165434}
   m_Layer: 9
   m_Name: ship
   m_TagString: Player
@@ -603,13 +602,6 @@ PolygonCollider2D:
       - {x: -.0997052193, y: .0116679817}
       - {x: -.224852085, y: .0157173872}
       - {x: -.287948132, y: .685928404}
---- !u!81 &8165434
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125106}
-  m_Enabled: 1
 --- !u!114 &11406470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -624,6 +616,15 @@ MonoBehaviour:
   baseCargoHoldSpace: 1
   baseEnergy: 10
   baseThrusterPower: 1
+  blinkConsumables: 0
+  boostConsumables: 0
+  energyConsumables: 0
+  blinkCooldown: 0
+  boostCooldown: 0
+  energyCooldown: 0
+  energyConsumablePower: 0
+  boostConsumablePower: 0
+  blinkConsumablePower: 0
   scrap: 0
   money: 10000
   artifacts: 
@@ -644,6 +645,8 @@ MonoBehaviour:
   _explosion: {fileID: 127994, guid: 95a70d9519c867349b9dd5d75b13029c, type: 2}
   _camVignette: {fileID: 0}
   worldController: {fileID: 0}
+  inventory: {fileID: 11406470}
+  isBoosted: 0
   _mousPos: {x: 0, y: 0, z: 0}
 --- !u!114 &11419016
 MonoBehaviour:
@@ -713,6 +716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290fbf1f72679974cb5049b97df89eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   activetKey: 49
   cam: {fileID: 0}
   ps: {fileID: 19823852}

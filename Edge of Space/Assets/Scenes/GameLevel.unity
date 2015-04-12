@@ -1052,12 +1052,6 @@ Canvas:
 GameObject:
   m_PrefabParentObject: {fileID: 125106, guid: c6e827328e332af4ea699d1803ab44ed, type: 2}
   m_PrefabInternal: {fileID: 1230164679}
---- !u!114 &518330728
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11406470, guid: c6e827328e332af4ea699d1803ab44ed,
-    type: 2}
-  m_PrefabInternal: {fileID: 1230164679}
-  m_Script: {fileID: 11500000, guid: 3932fed0b4bcbbc4dacd2406b71e0114, type: 3}
 --- !u!1 &587096476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2994,12 +2988,7 @@ Prefab:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1508305904}
-    - target: {fileID: 11408370, guid: c6e827328e332af4ea699d1803ab44ed, type: 2}
-      propertyPath: inventory
-      value: 
-      objectReference: {fileID: 518330728}
-    m_RemovedComponents:
-    - {fileID: 8165434, guid: c6e827328e332af4ea699d1803ab44ed, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e827328e332af4ea699d1803ab44ed, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1233097144
