@@ -82,6 +82,7 @@ public class SpaceShip : MonoBehaviour
 		}
 		else
 		{
+            if (_camVignette != null)
 			_camVignette.intensity = 0;
 		}
 

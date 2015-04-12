@@ -36,5 +36,12 @@ public class DescriptionScript : MonoBehaviour {
             + "Upgrade Cost: " + upgradeCost + System.Environment.NewLine
             + upgradeName + ": " + power;
     }
+
+    public void UpdateDescription(string description, int upgradeCost, string upgradeName)
+    {
+        myText.text = "Consumable item: " + upgradeName
+            + description + System.Environment.NewLine
+            + "Cost: " + upgradeCost + System.Environment.NewLine;
+    }
     
 }

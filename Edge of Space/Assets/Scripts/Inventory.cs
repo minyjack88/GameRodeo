@@ -12,6 +12,16 @@ public class Inventory : MonoBehaviour {
     public int baseEnergy;
     public int baseThrusterPower;
 
+    public int blinkConsumables;
+    public int boostConsumables;
+    public int energyConsumables;
+
+    public float blinkCooldown;
+    public float boostCooldown;
+    public float energyCooldown;
+    public int energyConsumablePower;
+    public int boostConsumablePower;
+    public int blinkConsumablePower;
 
     public int scrap = 0;
     public int money = 0;
