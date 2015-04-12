@@ -27,9 +27,13 @@ public class MessageManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GlobalSettings.messageManager = this;
+        
     }
 
+    void Awake()
+    {
+        GlobalSettings.messageManager = this;
+    }
     
 
     // Update is called once per frame
@@ -80,14 +84,20 @@ public class MessageManager : MonoBehaviour
                     "HQ: \"... And Jackson?\"",
                     "Jackson: \"Yeah?\"",
                     "HQ: \"Be careful.\"",
-                    "Jackson: \"I will, Alice. Jackson out.\""};
-                    sprites = new List<Sprite>() {help, male, female, male, female, male, female, female, male, female, male};
+                    "Jackson: \"I will, Alice. Jackson out.\"",
+                    "*HELP* Reach the middle of the anomaly, the closer to the middle you are, the harsher the environment is."};
+                    sprites = new List<Sprite>() {help, male, female, male, female, male, female, female, male, female, male, help};
                     break;
                 case MessageType.win:
                     texts = new List<string>() {"HQ: \"Jackson?\"",
                     "HQ: \"...\"",
-                    "HQ: \"Jackson, please respond.\""};
-                    sprites = new List<Sprite>() { female, female, female};
+                    "HQ: \"Jackson, please respond!\"",
+                    "Jackson: *Static* \"..mazing, HQ, you need to see th..\" *Static*",
+                    "HQ: \"Jackson, you're breaking up! Please return to the facility immediately!\"",
+                    "Jackson: *static* \"..eres more beyond the horizon. I'll see you all beyo..\" *static*",
+                    "HQ: \"All is not lost, ready a rescue party!\"",
+                    "*TO BE CONTINUED*"};
+                    sprites = new List<Sprite>() { female, female, female, male, female, male, female, help};
                     break;
 
                 case MessageType.artifact:
