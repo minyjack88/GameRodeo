@@ -5,12 +5,12 @@ using System.Collections;
 
 public class Thruster : MonoBehaviour
 {
-
+    public SoundPlayer sPlayer;
 	public ThrusterStruct[] MyThrusters;
 
     void Update()
     {
-
+        bool soundPlay = false;
 	    foreach (var thrusters in MyThrusters)
 	    {
 		    bool isActive = false;
@@ -25,16 +25,33 @@ public class Thruster : MonoBehaviour
 
 		    foreach (var thruster in thrusters.Particles)
 		    {
-			    if (isActive)
-			    {
-					if(!thruster.isPlaying)
-						thruster.Play();
-					
-			    }
-				else
-					thruster.Stop();
+                if (isActive)
+                {
+                    if (!thruster.isPlaying)
+                    {
+                        thruster.Play();
+                      
+                    }
+                }
+                else
+                {
+                    thruster.Stop();
+                   
+                }
 			}
+
+            if (isActive)
+                soundPlay = true;
 	    }
+
+        if (soundPlay)
+        {
+            sPlayer.Play();
+        }
+        else
+        {
+            sPlayer.Stop(false);
+        }
     }
 }
 	[Serializable]
