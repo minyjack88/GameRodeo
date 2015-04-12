@@ -135,21 +135,21 @@ public class ShopScript : MonoBehaviour
                 case ArtifactType.Blink:
                     BlinkArtifactText.text = "Enables you to warp space time, instantly teleporting to a different location.";
                     BlinkArtifactImage.color = Color.white;
-                    BlinkConsumableImage.enabled = true;
-                    BuyBlinkConsumableButton.enabled = true;
+					BlinkConsumableImage.gameObject.SetActive(true);
+					BuyBlinkConsumableButton.gameObject.SetActive(true);
                     //Enable consumeable Canvas
                     break;
                 case ArtifactType.Battery:
                     BatteryArtifactText.text = "Unknown technology that allows the compression of energy into a miniscule object.";
                     BatteryArtifactImage.color = Color.white;
-                    EnergyConsumableImage.enabled = true;
-                    BuyEnergyConsumableButton.enabled = true;
+					EnergyConsumableImage.gameObject.SetActive(true);
+					BuyEnergyConsumableButton.gameObject.SetActive(true);
                     break;
                 case ArtifactType.Overdrive:
                     OverdriveArtifactText.text = "Allows rapid acceleration boosts at the cost of extra fuel.";
                     OverdriveArtifactImage.color = Color.white;
-                    BoostConsumableImage.enabled = true;
-                    BuyBoostConsumableButton.enabled = true;
+					BoostConsumableImage.gameObject.SetActive(true);
+					BuyBoostConsumableButton.gameObject.SetActive(true);
                     break;
                 default:
                     break;
@@ -169,6 +169,7 @@ public class ShopScript : MonoBehaviour
             inventory.money -= blinkConsumableCost;
             mySource.clip = buySoundClip;
             mySource.Play();
+			resourceText.text = "Resources: " + inventory.money;
 
         }
     }
@@ -181,6 +182,7 @@ public class ShopScript : MonoBehaviour
             inventory.money -= boostConsumableCost;
             mySource.clip = buySoundClip;
             mySource.Play();
+			resourceText.text = "Resources: " + inventory.money;
         }
     }
 
@@ -192,6 +194,7 @@ public class ShopScript : MonoBehaviour
             inventory.money -= energyConsumableCost;
             mySource.clip = buySoundClip;
             mySource.Play();
+			resourceText.text = "Resources: " + inventory.money;
         }
     }
 }

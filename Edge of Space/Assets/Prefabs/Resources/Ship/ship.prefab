@@ -64,6 +64,8 @@ GameObject:
   - 114: {fileID: 11406470}
   - 114: {fileID: 11419016}
   - 114: {fileID: 11492752}
+  - 114: {fileID: 11404604}
+  - 114: {fileID: 11466376}
   m_Layer: 9
   m_Name: ship
   m_TagString: Player
@@ -550,7 +552,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125106}
   m_LocalRotation: {x: 0, y: 0, z: .01959919, w: .999807894}
-  m_LocalPosition: {x: -138, y: -3, z: 0}
+  m_LocalPosition: {x: -105.099998, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415626}
@@ -673,7 +675,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .0500000007
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -800,6 +802,18 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11404604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697a6bb2b5db8d94184d3aa1a95265e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activetKey: 50
 --- !u!114 &11406470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -820,13 +834,17 @@ MonoBehaviour:
   blinkCooldown: 0
   boostCooldown: 0
   energyCooldown: 0
-  energyConsumablePower: 0
+  energyConsumablePower: 250
   boostConsumablePower: 0
   blinkConsumablePower: 0
+  boostDuration: 2
   scrap: 0
   money: 10000
   artifacts: 
   pickUpLayer: 10
+  batteryFab: {fileID: 124170, guid: 374773763c58b0d408053f71a8324c1f, type: 2}
+  blinkFab: {fileID: 101150, guid: 8806dec62d7d34741b486db058f1560d, type: 2}
+  overdriveFab: {fileID: 165802, guid: e37eefc86edf7bd4580db673df7a79d1, type: 2}
 --- !u!114 &11408370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -931,6 +949,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   start: {fileID: 8300000, guid: c9663d102e76ebb459a23e2dfac23fa9, type: 3}
   loop: {fileID: 8300000, guid: 036fa8fe1189e1c409377e919fcfd0ce, type: 3}
+--- !u!114 &11466376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7aeb154487adb47a998bd4e696aa35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activetKey: 51
 --- !u!114 &11492752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -942,7 +972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290fbf1f72679974cb5049b97df89eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   activetKey: 49
   cam: {fileID: 0}
   ps: {fileID: 19823852}

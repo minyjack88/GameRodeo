@@ -31,6 +31,11 @@ public class WorldController : MonoBehaviour
 		_allGOs = allGOs;
 	}
 
+
+	public void GoListAdd(GameObject go)
+	{
+		_allGOs.Add(go);
+	}
 	
 
 	void Update()

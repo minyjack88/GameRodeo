@@ -108,6 +108,7 @@ public class SpaceShip : MonoBehaviour
 			var hq = GameObject.Find("HQ").GetComponent<Respawner>();
 			var go =(GameObject)Instantiate(_explosion, transform.position, Quaternion.identity);
 			Destroy(go, 3);
+			inventory.DropInventory();
 			hq.Die(this);
 		}
 	}
