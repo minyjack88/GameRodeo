@@ -26,31 +26,31 @@ public class UpgradeCargoHoldScript : UpgradeScript
         {
             case 1:
                 upgradeCost = 100;
-                power = 10;
+                power = 50;
                 break;
 
             case 2:
                 upgradeCost = 200;
-                power = 20;
+                power = 75;
                 break;
 
             case 3:
                 upgradeCost = 300;
-                power = 30;
+                power = 120;
                 break;
 
             case 4:
                 upgradeCost = 400;
-                power = 40;
+                power = 170;
                 break;
 
             case 5:
                 upgradeCost = 500;
-                power = 50;
+                power = 250;
                 break;
 
             case 6:
-                power = 60;
+                power = 400;
                 upgradeable = false;
                 button.SetActive(false);
                 break;

@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Logans test.unity
-  - enabled: 1
-    path: Assets/Scenes/GameWon.unity
+    path: Assets/Scenes/TitelScene.unity
   - enabled: 1
     path: Assets/Scenes/GameLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/GameWon.unity

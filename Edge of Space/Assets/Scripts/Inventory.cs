@@ -43,11 +43,23 @@ public class Inventory : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer == pickUpLayer && scrap < baseCargoHoldSpace)
+        if (other.gameObject.layer == pickUpLayer)
         {
-            other.gameObject.GetComponent<PickupableItem>().PickupItem(this);
-            cs.pullingObject.Remove(other.rigidbody);
-            Destroy(other.gameObject);
+	        if (other.gameObject.GetComponent<ScrapItem>() != null)
+	        {
+		        if (scrap < baseCargoHoldSpace)
+		        {
+					other.gameObject.GetComponent<PickupableItem>().PickupItem(this);
+					cs.pullingObject.Remove(other.rigidbody);
+					Destroy(other.gameObject);
+		        }
+	        }
+	        else
+	        {
+				other.gameObject.GetComponent<PickupableItem>().PickupItem(this);
+				cs.pullingObject.Remove(other.rigidbody);
+				Destroy(other.gameObject);
+	        }
         }
     }
     

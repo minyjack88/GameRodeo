@@ -9,6 +9,8 @@ public class ThrusterBoost : MonoBehaviour {
     Inventory inventory;
     SpaceShip spaceShip;
 
+	[SerializeField] private AudioSource thrusterSource;
+
 	// Use this for initialization
 	void Start () {
         inventory = this.gameObject.GetComponent<Inventory>();
@@ -22,16 +24,16 @@ public class ThrusterBoost : MonoBehaviour {
 
         if (spaceShip.isBoosted && timer + inventory.boostDuration < inventory.boostCooldown )
         {
+	        thrusterSource.pitch = 1f;
             spaceShip.isBoosted = false;
         }
 
         if (inventory.boostConsumables > 0 && timer <= 0 && Input.GetKeyDown(activetKey))
         {
-            print("Boosting!");
+	        thrusterSource.pitch = 2f;
             inventory.blinkConsumables--;
             timer = inventory.boostCooldown;
             spaceShip.isBoosted = true;
         }
-
 	}
 }

@@ -10,8 +10,8 @@ public class ScrapItem : PickupableItem
 
     void Awake()
     {
-        size = UnityEngine.Random.Range(0.2f, 1);
-        this.gameObject.transform.localScale *= size;
+        size = UnityEngine.Random.Range(4f, 20);
+        this.gameObject.transform.localScale *= size / 20;
     }
 	
     public override void PickupItem(Inventory inventory)

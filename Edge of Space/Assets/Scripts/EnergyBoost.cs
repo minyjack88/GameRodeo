@@ -8,6 +8,8 @@ public class EnergyBoost : MonoBehaviour {
 
     Inventory inventory;
     EnergyCore energyCore;
+	[SerializeField] private AudioSource source;
+	[SerializeField] private AudioClip boostClip;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +20,12 @@ public class EnergyBoost : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         timer -= Time.deltaTime;
-
+		
         if (inventory.energyConsumables > 0 && timer <= 0 && Input.GetKeyDown(activetKey))
         {
+	        source.clip = boostClip;
+			source.Play();
+
             inventory.energyConsumables--;
             timer = inventory.energyCooldown;
             energyCore.AddEnergy(inventory.energyConsumablePower);
