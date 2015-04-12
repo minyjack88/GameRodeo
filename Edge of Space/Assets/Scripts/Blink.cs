@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Blink : MonoBehaviour 
 {
-    public GameObject player;
+
     private Inventory inventory;
     private float timer;
 
@@ -14,7 +14,7 @@ public class Blink : MonoBehaviour
 
     void Start()
     {
-        inventory = player.GetComponent<Inventory>();
+        inventory = this.gameObject.GetComponent<Inventory>();
         timer = inventory.blinkCooldown;
     }
 
