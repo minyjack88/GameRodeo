@@ -35,7 +35,7 @@ public class MessageManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (messageInProgress && Input.GetKeyDown(KeyCode.Return))
+        if (messageInProgress && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter) ))
         {
             NextText();
         }
@@ -70,7 +70,7 @@ public class MessageManager : MonoBehaviour
             switch (messageType)
             {
                 case MessageType.intro:
-                    texts = new List<string>() {"*HELP* Press enter to proceed.",
+                    texts = new List<string>() {"*HELP* Press space/enter to proceed.",
                     "Jackson: \"HQ, I've arrived at the anomaly.\"",
                     "HQ: \"Greetings commander, well done. Begin extraction of artifacts immediately.\"",
                     "Jackson: \"There's a problem, I'm detecting high amounts of space distortion. I may need to improve the shield capacity of my vessel.\"",

@@ -67,6 +67,11 @@ public class WorldController : MonoBehaviour
 	{
 		foreach (var go in _allGOs)
 		{
+			if (go == null)
+			{
+				_allGOs.Remove(go);
+				continue;
+			}
 			var goRigid = go.GetComponent<Rigidbody2D>();
 			float goInitialDistance = go.GetComponent<SpawnableGO>().InitialDistance;
 			
