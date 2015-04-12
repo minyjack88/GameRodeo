@@ -14,7 +14,7 @@ public class UpgradeScript : MonoBehaviour {
 
     public string describtionText;
     public int upgradeCost;
-    public int power;
+    public float power;
     public int level;
     public bool upgradeable = true;
 

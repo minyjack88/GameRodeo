@@ -51,6 +51,9 @@ public class SpaceShip : MonoBehaviour
 
 	void ApplyMovement()
 	{
+		float myBoost = inventory.baseThrusterPower;
+		if (isBoosted)
+			myBoost *= 1.5f;
 		Vector2 forceVector = Vector3.zero;
 		if (Input.GetKey(KeyCode.LeftShift))
 		{
@@ -62,10 +65,10 @@ public class SpaceShip : MonoBehaviour
 		else
 		{
 			if (Input.GetAxis("Vertical") > 0)
-				forceVector += (Vector2)transform.right * 2 * _speed * Time.fixedDeltaTime;
+				forceVector += (Vector2)transform.right * 2 * _speed * Time.fixedDeltaTime * myBoost;
 			else if (Input.GetAxis("Vertical") < 0)
-				forceVector -= (Vector2)transform.right*_speed*Time.fixedDeltaTime;
-			forceVector -= (Vector2)transform.up * Input.GetAxis("Horizontal") * _speed * Time.fixedDeltaTime;
+				forceVector -= (Vector2)transform.right * _speed * Time.fixedDeltaTime * myBoost;
+			forceVector -= (Vector2)transform.up * Input.GetAxis("Horizontal") * _speed * Time.fixedDeltaTime * myBoost;
 		}
 		
 		_myRigidbody2D.AddForce(forceVector);

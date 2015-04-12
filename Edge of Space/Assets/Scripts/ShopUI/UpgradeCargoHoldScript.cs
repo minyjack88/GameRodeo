@@ -60,11 +60,11 @@ public class UpgradeCargoHoldScript : UpgradeScript
 
     public override void UpdatePlayer()
     {
-        inventory.baseCargoHoldSpace = power;
+        inventory.baseCargoHoldSpace = Mathf.RoundToInt(power);
     }
 
     public override void UpdateDescription()
     {
-        descriptionScript.UpdateDescription(describtionText, upgradeCost, "Cargo Space", power, level);
+        descriptionScript.UpdateDescription(describtionText, upgradeCost, "Cargo Space", Mathf.RoundToInt(power), level);
     }
 }

@@ -22,31 +22,31 @@ public class UpgradeThrusterScript : UpgradeScript
         {
             case 1:
                 upgradeCost = 123;
-                power = 12;
+                power = 1;
                 break;
 
             case 2:
                 upgradeCost = 234;
-                power = 23;
+                power = 1.1f;
                 break;
 
             case 3:
                 upgradeCost = 345;
-                power = 34;
+                power = 1.3f;
                 break;
 
             case 4:
                 upgradeCost = 456;
-                power = 45;
+                power = 1.7f;
                 break;
 
             case 5:
                 upgradeCost = 567;
-                power = 56;
+                power = 2.2f;
                 break;
 
             case 6:
-                power = 67;
+                power = 3;
                 upgradeable = false;
                 button.SetActive(false);
                 break;
@@ -65,6 +65,6 @@ public class UpgradeThrusterScript : UpgradeScript
 
     public override void UpdateDescription()
     {
-        descriptionScript.UpdateDescription(describtionText, upgradeCost, "Thruster Power", power, level);
+		descriptionScript.UpdateDescription(describtionText, upgradeCost, "Thruster Power", Mathf.RoundToInt(power), level);
     }
 }

@@ -60,12 +60,12 @@ public class UpgradeEnergyScript : UpgradeScript
 
     public override void UpdatePlayer()
     {
-        inventory.baseEnergy = power;
+		inventory.baseEnergy = Mathf.RoundToInt(power);
 		player.GetComponent<EnergyCore>().ResetPower();
     }
 
     public override void UpdateDescription()
     {
-        descriptionScript.UpdateDescription(describtionText, upgradeCost, "Max Energy", power, level);
+		descriptionScript.UpdateDescription(describtionText, upgradeCost, "Max Energy", Mathf.RoundToInt(power), level);
     }
 }

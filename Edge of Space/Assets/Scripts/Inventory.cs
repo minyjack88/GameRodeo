@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour {
 
     public int baseCargoHoldSpace;
     public int baseEnergy;
-    public int baseThrusterPower;
+    public float baseThrusterPower;
 
     public int blinkConsumables;
     public int boostConsumables;
