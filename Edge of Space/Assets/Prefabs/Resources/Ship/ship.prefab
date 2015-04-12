@@ -64,7 +64,6 @@ GameObject:
   - 114: {fileID: 11406470}
   - 114: {fileID: 11419016}
   - 114: {fileID: 11492752}
-  - 81: {fileID: 8160252}
   m_Layer: 9
   m_Name: ship
   m_TagString: Player
@@ -550,8 +549,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 125106}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: .01959919, w: .999807894}
+  m_LocalPosition: {x: -138, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415626}
@@ -663,13 +662,6 @@ PolygonCollider2D:
       - {x: -.0997052193, y: .0116679817}
       - {x: -.224852085, y: .0157173872}
       - {x: -.287948132, y: .685928404}
---- !u!81 &8160252
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 125106}
-  m_Enabled: 1
 --- !u!82 &8286166
 AudioSource:
   m_ObjectHideFlags: 1
@@ -865,7 +857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ac3d7089b849e4ea1139783cb2e010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sPlayer: {fileID: 0}
+  sPlayer: {fileID: 11463410}
   MyThrusters:
   - ActivatorKeys: 7700000011010000
     Particles:
@@ -925,7 +917,7 @@ MonoBehaviour:
   pullingObject: []
   TracKey: 323
   TracBeam: {fileID: 169484}
-  sPlayer: {fileID: 0}
+  sPlayer: {fileID: 11435150}
 --- !u!114 &11463410
 MonoBehaviour:
   m_ObjectHideFlags: 1

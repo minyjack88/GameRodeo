@@ -32,7 +32,7 @@ public class BlackHole : Anomaly
 			if (dist < _radius)
 			{
 				float f = dist - _radius;
-				_playerRigid.AddForce((_playerGo.transform.position - transform.position) * f );
+				_playerRigid.AddForce((_playerGo.transform.position - transform.position) * f * 2);
 			}
 		}
 	}
