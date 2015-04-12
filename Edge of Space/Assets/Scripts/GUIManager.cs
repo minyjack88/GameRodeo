@@ -10,6 +10,10 @@ public class GUIManager : MonoBehaviour {
     public Text energyText;
     public Text cargoText;
 
+	public Text BlinkText;
+	public Text BoostText;
+	public Text EnergyText;
+
 
     private Inventory inventory;
     private EnergyCore energyCore;
@@ -32,7 +36,12 @@ public class GUIManager : MonoBehaviour {
         //totally waste of CPU power ftw
         cargoBarImage.fillAmount = (float)inventory.scrap / (float)inventory.baseCargoHoldSpace;
         cargoText.text = inventory.scrap + "/" + inventory.baseCargoHoldSpace;
-	}
+
+		BlinkText.text = inventory.blinkConsumables.ToString();
+		BoostText.text = inventory.boostConsumables.ToString();
+		EnergyText.text = inventory.energyConsumables.ToString();
+
+    }
 
 
 

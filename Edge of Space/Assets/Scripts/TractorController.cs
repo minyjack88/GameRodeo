@@ -16,13 +16,15 @@ public class TractorController : CenterStats
 
     void Update()
     {
-        if (Input.GetKeyDown(TracKey))
+	    if (Time.timeScale <= 0)
+	    {
+		    TracBeam.SetActive(false);
+			sPlayer.Stop(true);
+	    }else if (Input.GetKeyDown(TracKey))
         {
-            TracBeam.SetActive(true);
-            sPlayer.Play();
-        }
-
-        if (Input.GetKeyUp(TracKey))
+			TracBeam.SetActive(true);
+			sPlayer.Play();
+        }else if (Input.GetKeyUp(TracKey))
         {
             TracBeam.SetActive(false);
             pullingObject.Clear();

@@ -16,6 +16,8 @@ public class ShopScript : MonoBehaviour
 
     public int scrapValue = 1;
 
+	private float coolDown = 0;
+
 
     [SerializeField]
     private Text BlinkArtifactText;
@@ -50,6 +52,17 @@ public class ShopScript : MonoBehaviour
     private Button BuyEnergyConsumableButton;
     [SerializeField]
     private Image EnergyConsumableImage;
+
+	[SerializeField]private Image BlinkUIImage;
+	[SerializeField] private Text BlinkUIText;
+	[SerializeField]
+	private Image BoostUIImage;
+	[SerializeField]
+	private Text BoostUIText;
+	[SerializeField]
+	private Image EnergyUIImage;
+	[SerializeField]
+	private Text EnergyUIText;
 
     [SerializeField]
     private Text resourceText;
@@ -94,12 +107,15 @@ public class ShopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+	    if (coolDown > 0)
+	    {
+		    coolDown -= Time.deltaTime;
+	    }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && coolDown <= 0)
         {
             mySource.clip = rechargeClip;
             mySource.Play();
@@ -114,6 +130,7 @@ public class ShopScript : MonoBehaviour
 
     public void ExitShop()
     {
+	    coolDown = 1f;
         GlobalSettings.TogglePause(false);
         canvas.SetActive(false);
     }
@@ -137,6 +154,8 @@ public class ShopScript : MonoBehaviour
                     BlinkArtifactImage.color = Color.white;
 					BlinkConsumableImage.gameObject.SetActive(true);
 					BuyBlinkConsumableButton.gameObject.SetActive(true);
+					BlinkUIImage.gameObject.SetActive(true);
+					BlinkUIText.gameObject.SetActive(true);
                     //Enable consumeable Canvas
                     break;
                 case ArtifactType.Battery:
@@ -144,12 +163,16 @@ public class ShopScript : MonoBehaviour
                     BatteryArtifactImage.color = Color.white;
 					EnergyConsumableImage.gameObject.SetActive(true);
 					BuyEnergyConsumableButton.gameObject.SetActive(true);
+					EnergyUIImage.gameObject.SetActive(true);
+					EnergyUIText.gameObject.SetActive(true);
                     break;
                 case ArtifactType.Overdrive:
                     OverdriveArtifactText.text = "Allows rapid acceleration boosts at the cost of extra fuel.";
                     OverdriveArtifactImage.color = Color.white;
 					BoostConsumableImage.gameObject.SetActive(true);
 					BuyBoostConsumableButton.gameObject.SetActive(true);
+					BoostUIImage.gameObject.SetActive(true);
+					BoostUIText.gameObject.SetActive(true);
                     break;
                 default:
                     break;
