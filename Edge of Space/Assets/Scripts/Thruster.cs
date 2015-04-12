@@ -1,24 +1,46 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using System.Collections;
 
-public class Thruster : MonoBehaviour 
+public class Thruster : MonoBehaviour
 {
-    public ParticleSystem ps;
-    public KeyCode activate;
+
+	public ThrusterStruct[] MyThrusters;
 
     void Update()
     {
-        if (Input.GetKey(activate))
-        {
-            if (ps.isStopped)
-                ps.Play();
-        }
-        else
-        {
-            if (ps.isPlaying)
-                ps.Stop();
-        }
 
+	    foreach (var thrusters in MyThrusters)
+	    {
+		    bool isActive = false;
+
+		    foreach (var key in thrusters.ActivatorKeys)
+		    {
+			    if (Input.GetKey(key))
+			    {
+				    isActive = true;
+			    }
+		    }
+
+		    foreach (var thruster in thrusters.Particles)
+		    {
+			    if (isActive)
+			    {
+					if(!thruster.isPlaying)
+						thruster.Play();
+					
+			    }
+				else
+					thruster.Stop();
+			}
+	    }
     }
-
 }
+	[Serializable]
+	public class ThrusterStruct
+	{
+		public List<KeyCode> ActivatorKeys;
+		public List<ParticleSystem> Particles;
+
+	}

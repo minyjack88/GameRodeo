@@ -26,11 +26,9 @@ public class TractorController : CenterStats
             pullingObject.Clear();
         }
 		
+
+		
         speed = Vector2.Distance(transform.position,lastpostion);
-
         lastpostion = transform.position;
-
     }
-
-
 }

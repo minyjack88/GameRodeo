@@ -37,4 +37,16 @@ public class TractorBeam : Pulling {
     {
         return size;
     }
+
+	public void OnTriggerStay2D (Collider2D other)
+	{
+		if (other.gameObject.layer == 10)
+		{
+//			other.GetComponent<Rigidbody2D>().AddForce((transform.position - other.transform.position) * 10);
+			Rigidbody2D rigid = other.GetComponent<Rigidbody2D>();
+			rigid.velocity = Vector2.zero;
+			rigid.AddForce((transform.position - other.transform.position) * 10);
+//			rigid.position += Vector2.Lerp(other.transform.position, transform.position, Time.deltaTime);
+		}
+	}
 }
