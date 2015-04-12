@@ -86,8 +86,13 @@ public class MessageManager : MonoBehaviour
                 case MessageType.win:
                     texts = new List<string>() {"HQ: \"Jackson?\"",
                     "HQ: \"...\"",
-                    "HQ: \"Jackson, please respond.\""};
-                    sprites = new List<Sprite>() { female, female, female};
+                    "HQ: \"Jackson, please respond!\"",
+                    "Jackson: *Static* \"..mazing, HQ, you need to see th..\" *Static*",
+                    "HQ: \"Jackson, you're breaking up! Please return to the facility immediately!\"",
+                    "Jackson: *static* \"..eres more beyond the horizon. I'll see you all beyo..\" *static*",
+                    "HQ: \"All is not lost, ready a rescue party!\"",
+                    "*TO BE CONTINUED*"};
+                    sprites = new List<Sprite>() { female, female, female, male, female, male, female, help};
                     break;
 
                 case MessageType.artifact:
