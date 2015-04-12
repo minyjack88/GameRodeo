@@ -6,7 +6,7 @@ public class SoundPlayer : MonoBehaviour {
 
     public AudioClip start;
     public AudioClip loop;
-    private AudioSource aSource;
+    [SerializeField]private AudioSource aSource;
     private bool playing = false;
 
 

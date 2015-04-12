@@ -33,26 +33,26 @@ public class UpgradeEnergyScript : UpgradeScript
 
             case 2:
                 upgradeCost = 222;
-		        power = 175;
+		        power = 250;
                 break;
 
             case 3:
                 upgradeCost = 333;
-                power = 290;
+                power = 500;
                 break;
 
             case 4:
                 upgradeCost = 444;
-                power = 400;
+                power = 750;
                 break;
 
             case 5:
                 upgradeCost = 555;
-                power = 750;
+                power = 1000;
                 break;
 
             case 6:
-                power = 750;
+                power = 1500;
                 upgradeable = false;
                 button.SetActive(false);
                 break;

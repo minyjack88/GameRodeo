@@ -223,7 +223,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: db2f9a88ff1fc7f41b08fc97d1b94e25, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &233875720 stripped
+--- !u!1 &233875720
 GameObject:
   m_PrefabParentObject: {fileID: 157274, guid: db2f9a88ff1fc7f41b08fc97d1b94e25, type: 2}
   m_PrefabInternal: {fileID: 208416109}
@@ -384,7 +384,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &598024639 stripped
+--- !u!1 &598024639
 GameObject:
   m_PrefabParentObject: {fileID: 108944, guid: d60cc1d1d7e14c54abd1ae8037b4435e, type: 2}
   m_PrefabInternal: {fileID: 101686564}
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 598024639}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988761cf0f02a02479dd3c9cb2c7c742, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fd92be5adfab3d4082ff4da179d3092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &853804414
@@ -489,7 +489,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &877864373 stripped
+--- !u!114 &877864373
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11427946, guid: db2f9a88ff1fc7f41b08fc97d1b94e25,
     type: 2}
@@ -561,7 +561,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919370714}
---- !u!114 &1505325331 stripped
+--- !u!114 &1505325331
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11425384, guid: db2f9a88ff1fc7f41b08fc97d1b94e25,
     type: 2}

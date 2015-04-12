@@ -25,32 +25,32 @@ public class UpgradeCargoHoldScript : UpgradeScript
         switch (level)
         {
             case 1:
-                upgradeCost = 100;
-                power = 50;
+                upgradeCost = 50;
+                power = 100;
                 break;
 
             case 2:
-                upgradeCost = 200;
-                power = 75;
+                upgradeCost = 100;
+                power = 275;
                 break;
 
             case 3:
-                upgradeCost = 300;
-                power = 120;
+                upgradeCost = 200;
+                power = 500;
                 break;
 
             case 4:
-                upgradeCost = 400;
-                power = 170;
+                upgradeCost = 300;
+                power = 800;
                 break;
 
             case 5:
-                upgradeCost = 500;
-                power = 250;
+                upgradeCost = 400;
+                power = 1200;
                 break;
 
             case 6:
-                power = 400;
+                power = 2000;
                 upgradeable = false;
                 button.SetActive(false);
                 break;

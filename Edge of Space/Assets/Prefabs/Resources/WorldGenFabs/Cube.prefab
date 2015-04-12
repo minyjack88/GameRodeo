@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b909b2711e0a6c44b46b15d8f935eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rarity: 100
+  _rarity: 200
   InitialDistance: 0
 --- !u!247 &24708594
 ConstantForce2D:

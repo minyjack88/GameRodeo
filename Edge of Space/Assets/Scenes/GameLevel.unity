@@ -931,6 +931,21 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1302689385}
   m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!1 &769062395
+GameObject:
+  m_PrefabParentObject: {fileID: 108944, guid: d60cc1d1d7e14c54abd1ae8037b4435e, type: 2}
+  m_PrefabInternal: {fileID: 1196441193}
+--- !u!114 &769062398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 769062395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3cdfebbff93d1459ed6b1df56f4a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &772517247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,11 +2662,11 @@ Prefab:
       objectReference: {fileID: 996045917}
     - target: {fileID: 11406470, guid: c6e827328e332af4ea699d1803ab44ed, type: 2}
       propertyPath: boostDuration
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11406470, guid: c6e827328e332af4ea699d1803ab44ed, type: 2}
       propertyPath: money
-      value: 50
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c6e827328e332af4ea699d1803ab44ed, type: 2}
