@@ -380,7 +380,7 @@ GameObject:
   - 198: {fileID: 19800000}
   - 199: {fileID: 19900000}
   m_Layer: 0
-  m_Name: Flame
+  m_Name: Distortion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.31332022, y: 2.40531802, z: -11.3714333}
+  m_LocalPosition: {x: .181999996, y: 1.93700004, z: -10.5780001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400050}
@@ -1064,14 +1064,14 @@ ParticleSystem:
   startDelay: 0
   speed: 1
   randomSeed: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: 1.29999995
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1086,7 +1086,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .5
+          value: .769230783
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1211,7 +1211,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 2
+      scalar: 2.29999995
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1226,7 +1226,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .75
+          value: .782608688
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1309,7 +1309,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 20
+    cnt0: 15
     cnt1: 30
     cnt2: 30
     cnt3: 30
@@ -1330,10 +1330,10 @@ ParticleSystem:
           inSlope: 2.27118969
           outSlope: 2.27118969
           tangentMode: 0
-        - time: .354629546
-          value: .925245404
-          inSlope: .373862386
-          outSlope: .373862386
+        - time: .245655194
+          value: .637245417
+          inSlope: 1.03339601
+          outSlope: 1.03339601
           tangentMode: 0
         - time: 1
           value: .998534977
@@ -1359,7 +1359,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 1
   RotationModule:
-    enabled: 1
+    enabled: 0
     curve:
       scalar: .785398126
       maxCurve:
@@ -1420,9 +1420,9 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 10409
-        atime2: 45682
-        atime3: 65535
+        atime1: 4993
+        atime2: 31693
+        atime3: 49307
         atime4: 0
         atime5: 0
         atime6: 0
@@ -1480,7 +1480,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 1
   UVModule:
-    enabled: 0
+    enabled: 1
     frameOverTime:
       scalar: 1
       maxCurve:
@@ -1515,10 +1515,10 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 1
     tilesX: 8
-    tilesY: 8
+    tilesY: 4
     animationType: 0
     rowIndex: 0
-    cycles: 1
+    cycles: 3
     randomRow: 1
   VelocityModule:
     enabled: 0
@@ -2179,7 +2179,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 1.29999995
+      scalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -2194,7 +2194,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .538461566
+          value: .533333361
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2241,7 +2241,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 0
-    radius: .150000006
+    radius: .300000012
     angle: 25
     length: 5
     boxX: 1
@@ -2287,7 +2287,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
       minMaxState: 0
-    cnt0: 40
+    cnt0: 60
     cnt1: 10
     cnt2: 5
     cnt3: 5
@@ -4007,7 +4007,7 @@ ParticleSystemRenderer:
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
-  m_SortingFudge: 10
+  m_SortingFudge: -100
   m_NormalDirection: 1
   m_SortMode: 1
   m_Mesh: {fileID: 0}

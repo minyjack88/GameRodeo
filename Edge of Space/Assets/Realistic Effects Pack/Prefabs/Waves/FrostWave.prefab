@@ -319,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2194caa8a026284d975848a1238e90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShaderColorName: _Color
+  ShaderColorName: _TintColor
   StartDelay: 0
   FadeInSpeed: .5
   FadeOutDelay: 0

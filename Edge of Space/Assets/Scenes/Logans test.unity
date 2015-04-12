@@ -343,6 +343,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsDead: 0
   _speed: 100
+  _camVignette: {fileID: 0}
+  worldController: {fileID: 0}
   _mousPos: {x: 0, y: 0, z: 0}
 --- !u!50 &957256128
 Rigidbody2D:

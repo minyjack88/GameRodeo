@@ -187,6 +187,7 @@ GameObject:
   - 4: {fileID: 400020}
   - 198: {fileID: 19800010}
   - 199: {fileID: 19900010}
+  - 114: {fileID: 11400024}
   m_Layer: 0
   m_Name: Distortion
   m_TagString: Untagged
@@ -218,7 +219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.222596586, y: .13000074, z: -9.90977192}
+  m_LocalPosition: {x: -.0500000007, y: .170000002, z: -9.80000019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -295,8 +296,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100014}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: 0, z: -.0800000206}
-  m_LocalScale: {x: 3.0999999, y: 3.0999999, z: 1}
+  m_LocalPosition: {x: -.119999997, y: -.0700000003, z: -.0799999982}
+  m_LocalScale: {x: 3.20000005, y: 3.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 400016}
   m_RootOrder: 2
@@ -400,7 +401,7 @@ MeshRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 2100000, guid: 773b42fcbded01d4187ac446134ba540, type: 2}
+  - {fileID: 2100000, guid: 971258dd658fff543b5ec9e414e6ea8b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -438,8 +439,8 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: .534279883, b: .176470578, a: 1}
-  m_Intensity: 3
-  m_Range: 7
+  m_Intensity: 1.60000002
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -470,8 +471,8 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: .634381294, b: .242647052, a: 1}
-  m_Intensity: 6
-  m_Range: 10
+  m_Intensity: 3
+  m_Range: 15
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -631,15 +632,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 100014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2194caa8a026284d975848a1238e90e, type: 3}
+  m_Script: {fileID: 11500000, guid: c0f8ee2e15161e6438ae903bc4455f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShaderColorName: _CoreColor
+  PropertyName: _CoreStrength
+  MaxFloat: 3
   StartDelay: 0
   FadeInSpeed: .200000003
-  FadeOutDelay: 2
+  FadeOutDelay: 4
   FadeOutSpeed: 1.60000002
-  UseSharedMaterial: 0
   FadeOutAfterCollision: 0
   UseHideStatus: 0
 --- !u!114 &11400016
@@ -650,15 +651,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 100014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2194caa8a026284d975848a1238e90e, type: 3}
+  m_Script: {fileID: 11500000, guid: c0f8ee2e15161e6438ae903bc4455f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShaderColorName: _TintColor
+  PropertyName: _TintStrength
+  MaxFloat: 3
   StartDelay: 0
   FadeInSpeed: .300000012
-  FadeOutDelay: 4
+  FadeOutDelay: 2
   FadeOutSpeed: 3
-  UseSharedMaterial: 0
   FadeOutAfterCollision: 0
   UseHideStatus: 0
 --- !u!114 &11400018
@@ -702,6 +703,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NormalizedRotateVector: {x: 0, y: 0, z: 1}
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4950d09c254db94981a726faa8a3383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AddQueue: 2
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

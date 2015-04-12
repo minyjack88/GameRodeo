@@ -212,7 +212,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.620975375, y: .230000407, z: -10.9477463}
+  m_LocalPosition: {x: 2.34200001, y: .51700002, z: -11.5050001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 100014}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: 0, y: 0, z: -.189999998}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 400016}
   m_RootOrder: 1
@@ -254,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: 0, z: -.170000002}
+  m_LocalPosition: {x: -.0960000008, y: -.00700000022, z: -.170000002}
   m_LocalScale: {x: 1.75, y: 1.75, z: 1}
   m_Children: []
   m_Father: {fileID: 400016}
@@ -444,7 +444,7 @@ MonoBehaviour:
   IsHomingMove: 0
   IsVisible: 1
   DeactivateAfterCollision: 1
-  DeactivateTimeDelay: 7
+  DeactivateTimeDelay: 10
   LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -474,7 +474,7 @@ MonoBehaviour:
   ShaderColorName: _Color
   StartDelay: 0
   FadeInSpeed: .300000012
-  FadeOutDelay: 4
+  FadeOutDelay: 7
   FadeOutSpeed: 3
   UseSharedMaterial: 0
   FadeOutAfterCollision: 0
@@ -493,7 +493,7 @@ MonoBehaviour:
   ShaderColorName: _TintColor
   StartDelay: 0
   FadeInSpeed: .200000003
-  FadeOutDelay: 0
+  FadeOutDelay: 4
   FadeOutSpeed: 3
   UseSharedMaterial: 0
   FadeOutAfterCollision: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
   ShaderColorName: _CoreColor
   StartDelay: 0
   FadeInSpeed: .200000003
-  FadeOutDelay: 0
+  FadeOutDelay: 4
   FadeOutSpeed: 3
   UseSharedMaterial: 0
   FadeOutAfterCollision: 0

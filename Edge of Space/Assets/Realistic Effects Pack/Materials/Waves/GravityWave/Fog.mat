@@ -39,12 +39,24 @@ Material:
         second: 3.00000072
       data:
         first:
+          name: _InvFade
+        second: .971071482
+      data:
+        first:
           name: _Emission
         second: 0
       data:
         first:
-          name: _InvFade
-        second: .971071482
+          name: _Opacity
+        second: 0
+      data:
+        first:
+          name: _FPOW
+        second: 5
+      data:
+        first:
+          name: _R0
+        second: .0500000007
       data:
         first:
           name: _CutOutLightCore
@@ -61,18 +73,6 @@ Material:
         first:
           name: _ColorStrB
         second: 1
-      data:
-        first:
-          name: _Opacity
-        second: 0
-      data:
-        first:
-          name: _FPOW
-        second: 5
-      data:
-        first:
-          name: _R0
-        second: .0500000007
     m_Colors:
       data:
         first:
@@ -92,6 +92,14 @@ Material:
         second: {r: .588235259, g: .588235259, b: .588235259, a: .101960786}
       data:
         first:
+          name: _EmisColor
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 0, g: 0, b: 0, a: .501960814}
+      data:
+        first:
           name: _TintColorR
         second: {r: .5, g: .5, b: .5, a: 1}
       data:
@@ -102,11 +110,3 @@ Material:
         first:
           name: _TintColorB
         second: {r: .5, g: .5, b: .5, a: 1}
-      data:
-        first:
-          name: _RimColor
-        second: {r: 0, g: 0, b: 0, a: .501960814}
-      data:
-        first:
-          name: _EmisColor
-        second: {r: 1, g: 1, b: 1, a: 0}

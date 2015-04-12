@@ -1,15 +1,13 @@
-﻿Shader "Effects/Distortion/Free/CutOutCullOff" {
+Shader "Effects/Distortion/Free/CutOutCullOff" {
 	Properties {
         _Color ("Main Color", Color) = (1,1,1,1)
 		_MainTex ("Base (RGB) Gloss (A)", 2D) = "black" {}
-		_CutoutTex ("Cutout Texture (R)", 2D) = "white" {}
+		_CutoutTex ("Cutout Texture (R)", 2D) = "black" {}
 		_ColorStrength ("Color Strength", Float) = 1
 }
 Category {
-	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+	Tags { "Queue"="Transparent+2" "IgnoreProjector"="True" "RenderType"="Transparent" }
 	Blend SrcAlpha One
-	AlphaTest Greater .01
-	ColorMask RGB
 	Cull Off 
 	Lighting Off 
 	ZWrite Off 
@@ -31,7 +29,6 @@ Category {
 				float4 vertex : POSITION;
 				fixed4 color : COLOR;
 				float2 texcoord : TEXCOORD0;
-				float2 texcoord1 : TEXCOORD1;
 			};
 
 			struct v2f {
@@ -50,15 +47,16 @@ Category {
 				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
 				o.color = v.color;
 				o.texcoord = TRANSFORM_TEX(v.texcoord,_MainTex);
-				o.texcoord1 = TRANSFORM_TEX(v.texcoord1,_CutoutTex);
+				o.texcoord1 = TRANSFORM_TEX(v.texcoord,_CutoutTex);
 				return o;
 			}
 
 			fixed4 frag (v2f i) : COLOR
 			{
 				fixed4 tex = tex2D(_MainTex, i.texcoord) * _Color;
+				fixed4 texCut = tex2D(_CutoutTex, i.texcoord1);
 				fixed4 col = tex*_ColorStrength;
-        		col.a = _Color.a * tex2D(_CutoutTex, i.texcoord1).a;
+        		col.a = _Color.a * texCut.a;
         		return col * i.color;
 			}
 			ENDCG 

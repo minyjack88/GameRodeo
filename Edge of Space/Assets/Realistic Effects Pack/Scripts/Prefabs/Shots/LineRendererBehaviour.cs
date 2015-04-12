@@ -65,8 +65,15 @@ public class LineRendererBehaviour : MonoBehaviour
     }
     else
     {
-      tTarget = effectSettings.Target.transform;
-      var targetDirection = (tTarget.position - tRoot.position).normalized;
+      if (effectSettings.Target != null) tTarget = effectSettings.Target.transform; 
+      else if (!effectSettings.UseMoveVector) { Debug.Log("You must setup the the target or the motion vector"); }
+      Vector3 targetDirection;
+      if (!effectSettings.UseMoveVector) {
+        targetDirection = (tTarget.position - tRoot.position).normalized;
+      }
+      else {
+        targetDirection = tRoot.position + effectSettings.MoveVector * effectSettings.MoveDistance;
+      }
       var direction = tRoot.position + targetDirection * effectSettings.MoveDistance;
       if (Physics.Raycast(tRoot.position, targetDirection, out hit, effectSettings.MoveDistance + 1, effectSettings.LayerMask)) {
         direction = (tRoot.position + Vector3.Normalize(hit.point - tRoot.position) * (effectSettings.MoveDistance + 1)).normalized;
@@ -77,7 +84,11 @@ public class LineRendererBehaviour : MonoBehaviour
       if (HitGlow!=null) HitGlow.transform.position = particlesOffsetPos;
       if (GoLight!=null) GoLight.transform.position = hit.point - direction * LightHeightOffset;
       if (Particles!=null) Particles.transform.position = particlesOffsetPos;
-      if (Explosion!=null) Explosion.transform.position = particlesOffsetPos;
+      if (Explosion!=null) {
+        Explosion.transform.position = particlesOffsetPos;
+        Explosion.transform.LookAt(particlesOffsetPos + hit.normal);
+      }
+      
     }
 
     var collInfo = new CollisionInfo { Hit = hit };

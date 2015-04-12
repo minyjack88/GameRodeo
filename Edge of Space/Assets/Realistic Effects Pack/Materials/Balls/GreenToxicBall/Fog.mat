@@ -30,16 +30,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Cube
+          name: _CutOut
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: a345823fbeed94346a92425d34c78dec, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _CutOut
+          name: _Cube
         second:
-          m_Texture: {fileID: 2800000, guid: a345823fbeed94346a92425d34c78dec, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -65,18 +65,6 @@ Material:
         second: 41.0714264
       data:
         first:
-          name: _TintStrength
-        second: .892857134
-      data:
-        first:
-          name: _CoreStrength
-        second: 1.44642854
-      data:
-        first:
-          name: _CutOutLightCore
-        second: .678571403
-      data:
-        first:
           name: _ReflectionStrength
         second: 1
       data:
@@ -95,6 +83,18 @@ Material:
         first:
           name: _LightStr
         second: 1
+      data:
+        first:
+          name: _TintStrength
+        second: .892857134
+      data:
+        first:
+          name: _CoreStrength
+        second: 1.44642854
+      data:
+        first:
+          name: _CutOutLightCore
+        second: .678571403
     m_Colors:
       data:
         first:

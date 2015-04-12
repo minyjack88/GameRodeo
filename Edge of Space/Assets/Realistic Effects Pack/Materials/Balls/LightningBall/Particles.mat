@@ -18,22 +18,22 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: e8a9c403be0513c429a727c5b2a4ddf1, type: 3}
+          m_Texture: {fileID: 2800000, guid: dd27607fe3bd52d4c84a5bd18e528fd5, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _TintStrength
-        second: 1.07142878
+        second: 7
       data:
         first:
           name: _CoreStrength
-        second: 5
+        second: 8
       data:
         first:
           name: _CutOutLightCore
-        second: 0
+        second: .767857134
     m_Colors:
       data:
         first:

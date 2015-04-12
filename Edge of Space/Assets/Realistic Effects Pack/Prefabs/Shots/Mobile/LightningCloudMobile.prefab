@@ -102,6 +102,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &100012
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400012}
+  - 119: {fileID: 11900000}
+  - 114: {fileID: 11400008}
+  m_Layer: 2
+  m_Name: FireProjector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -123,7 +140,8 @@ Transform:
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: -.707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 400012}
   m_Father: {fileID: 400010}
   m_RootOrder: 3
 --- !u!4 &400004
@@ -169,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.140617669, y: .0399998203, z: -9.27177048}
+  m_LocalPosition: {x: .0739338398, y: .0399998203, z: -9.34695244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -178,6 +196,18 @@ Transform:
   - {fileID: 400002}
   - {fileID: 400000}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!4 &400012
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400002}
   m_RootOrder: 0
 --- !u!108 &10800000
 Light:
@@ -240,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsVertical: 1
-  LightHeightOffset: .300000012
+  LightHeightOffset: .5
   ParticlesHeightOffset: .100000001
   TimeDestroyLightAfterCollision: 4
   TimeDestroyThisAfterCollision: 4
@@ -292,10 +322,47 @@ MonoBehaviour:
   IsHomingMove: 0
   IsVisible: 1
   DeactivateAfterCollision: 1
-  DeactivateTimeDelay: 2.5
+  DeactivateTimeDelay: 3.5
   LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2194caa8a026284d975848a1238e90e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderColorName: _TintColor
+  StartDelay: .200000003
+  FadeInSpeed: .200000003
+  FadeOutDelay: 1
+  FadeOutSpeed: 2
+  UseSharedMaterial: 0
+  FadeOutAfterCollision: 0
+  UseHideStatus: 0
+--- !u!119 &11900000
+Projector:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_NearClipPlane: .100000001
+  m_FarClipPlane: 2
+  m_FieldOfView: 90
+  m_AspectRatio: 1
+  m_Orthographic: 1
+  m_OrthographicSize: 2
+  m_Material: {fileID: 2100000, guid: 15a0c6a67dc940c49ab4962ba72a164b, type: 2}
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
 --- !u!120 &12000000
 LineRenderer:
   m_ObjectHideFlags: 1

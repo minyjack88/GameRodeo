@@ -29,15 +29,15 @@ Material:
       data:
         first:
           name: _TintStrength
-        second: 0
+        second: 1
       data:
         first:
           name: _CoreStrength
-        second: 2.67857146
+        second: 2
       data:
         first:
           name: _CutOutLightCore
-        second: .892857134
+        second: .910714269
     m_Colors:
       data:
         first:

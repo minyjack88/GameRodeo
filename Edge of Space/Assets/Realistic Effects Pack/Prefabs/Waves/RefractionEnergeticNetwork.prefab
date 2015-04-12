@@ -110,6 +110,7 @@ GameObject:
   - 4: {fileID: 400012}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: InteractiveCloth
   m_TagString: Untagged
@@ -337,6 +338,18 @@ MonoBehaviour:
   IsRandomOffsetForInctance: 0
   IsBump: 1
   IsHeight: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4950d09c254db94981a726faa8a3383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AddQueue: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2194caa8a026284d975848a1238e90e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShaderColorName: _Color
+  ShaderColorName: _TintColor
   StartDelay: .100000001
   FadeInSpeed: .200000003
   FadeOutDelay: 0

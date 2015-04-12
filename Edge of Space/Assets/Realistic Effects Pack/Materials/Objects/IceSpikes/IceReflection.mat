@@ -26,8 +26,8 @@ Material:
           name: _BumpMap
         second:
           m_Texture: {fileID: 2800000, guid: c6ade4c2fb3de764bbef1ae231d1d039, type: 3}
-          m_Scale: {x: .100000001, y: .200000003}
-          m_Offset: {x: 0, y: 0}
+          m_Scale: {x: .0500000007, y: .0500000007}
+          m_Offset: {x: .5, y: .5}
       data:
         first:
           name: _Cube
@@ -46,7 +46,7 @@ Material:
       data:
         first:
           name: _Cutoff
-        second: .946428597
+        second: 1
       data:
         first:
           name: _Shininess
@@ -58,7 +58,7 @@ Material:
       data:
         first:
           name: _BumpAmt
-        second: 366.071442
+        second: 300
       data:
         first:
           name: _ReflectionStrength
@@ -78,7 +78,7 @@ Material:
       data:
         first:
           name: _LightStr
-        second: .410714269
+        second: .571428537
     m_Colors:
       data:
         first:
@@ -99,4 +99,4 @@ Material:
       data:
         first:
           name: _ReflectColor
-        second: {r: .836397052, g: .87183094, b: .95588237, a: .501960814}
+        second: {r: .836397052, g: .87183094, b: .95588237, a: 1}

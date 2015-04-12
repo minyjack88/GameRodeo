@@ -28,6 +28,14 @@ Material:
         second: 3
       data:
         first:
+          name: _FPOW
+        second: 5
+      data:
+        first:
+          name: _R0
+        second: .0500000007
+      data:
+        first:
           name: _TintStrength
         second: 2.41071439
       data:
@@ -38,14 +46,6 @@ Material:
         first:
           name: _CutOutLightCore
         second: 0
-      data:
-        first:
-          name: _FPOW
-        second: 5
-      data:
-        first:
-          name: _R0
-        second: .0500000007
     m_Colors:
       data:
         first:
@@ -57,9 +57,9 @@ Material:
         second: {r: .147058845, g: .404295295, b: 1, a: 1}
       data:
         first:
-          name: _CoreColor
-        second: {r: .323529422, g: .38417834, b: 1, a: 1}
-      data:
-        first:
           name: _EmisColor
         second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
+      data:
+        first:
+          name: _CoreColor
+        second: {r: .323529422, g: .38417834, b: 1, a: 1}

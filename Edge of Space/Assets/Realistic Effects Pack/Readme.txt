@@ -1,5 +1,6 @@
-To work correctly, some of the effects, it is recommended to enable "HDR" from the active camera. 
-Distortions do not work on the free version of Unity. On mobile, the distortion is very slow. For the free version of Unity and mobile use effects without distortion.
+To work correctly, some of the effects, it is recommended to enable "HDR" from the active camera and set rendering path as "Deffered Lighting".
+Distortions do not work on the free version of Unity! Use effect without distortions. 
+On mobile, the distortion working with target texture (script "DistortionMobile" should be activated). For mobile, use mobile effects. It's more optimized.
 
 All effects consist of particle systems, models, scripts. For easy management, each effect is the main script "Effect Settings". 
 He has common settings, such as "target", "collider radius", "move speed" and others. For a specific effect, some of the settings do not make sense (eg portal has no speed settings).
@@ -12,6 +13,8 @@ Script Parameters "Effect Settings":
 
 - EffectRadius: in this version of the pack is not in use. Allows you to change some AOE effects range.
 
+- UseMoveVector: allows you to use Vector3 or Gameobject for target.
+
 - Target: allows you set a target or a point in space, in the direction you want to move.
 For example projectile shot in a straight line from the camera (First person viev):
 	var go = new GameObject();
@@ -20,6 +23,7 @@ For example projectile shot in a straight line from the camera (First person vie
 
 Or a shot towards the target:
 effectSettings.Target = Enemy;
+Also, you can check "UseMoveVector" and set vector of motion (eg effectSettings.MoveVector = Vector3.forward)
 
 - MoveSpeed: allows you to adjust the speed of the projectile. 
 

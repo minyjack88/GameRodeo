@@ -87,6 +87,52 @@ NavMeshSettings:
     cellSize: .166666657
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &39321286
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 39321287}
+  - 114: {fileID: 39321288}
+  m_Layer: 0
+  m_Name: LoadDistortionMobile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &39321287
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39321286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.408333868, y: -5.61453962, z: 4.8780365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+--- !u!114 &39321288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39321286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5a3a8dc54150541959d60320d72b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextureScale: 1
+  RenderTextureFormat: 0
+  FilterMode: 0
+  CullingMask: {}
+  RenderingPath: -1
+  FPSWhenMoveCamera: 60
+  FPSWhenStaticCamera: 40
 --- !u!1 &84042267
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +380,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: f9a02e8a4fa01d14e8a3747542ac9cde, type: 2}
   - {fileID: 2100000, guid: 8ba0f29ff5cb8a1469bc174d33f105ba, type: 2}
   - {fileID: 2100000, guid: 5d177990fd0ae814aa669f61fc14b8ae, type: 2}
-  GuiStats: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000003000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000020000000200000000000000020000000000000001000000010000000000000000000000
+  GuiStats: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000300000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000002000000020000000000000002000000000000000100000001000000000000000000000000000000
   Prefabs:
   - {fileID: 100008, guid: a2431a8128f83f049935d0416b052a22, type: 2}
   - {fileID: 100052, guid: c00b0442e33885d419ee3fb7bca73b17, type: 2}
@@ -370,6 +416,7 @@ MonoBehaviour:
   - {fileID: 100020, guid: 9867c7950373e8846a119664b75baf51, type: 2}
   - {fileID: 100024, guid: fd7fc39632c6af144a8614ad9585c803, type: 2}
   - {fileID: 100014, guid: 66ed9d8b322e2e84aa6d0776ed73d574, type: 2}
+  - {fileID: 100016, guid: 29db48bc49f060e47b9b93e177fd7aa8, type: 2}
 --- !u!4 &370787892
 Transform:
   m_ObjectHideFlags: 0
@@ -424,7 +471,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.39999998
+  m_Intensity: 1.20000005
   m_Range: 100
   m_SpotAngle: 30
   m_CookieSize: 10

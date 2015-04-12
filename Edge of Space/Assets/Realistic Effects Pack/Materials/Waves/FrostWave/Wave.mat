@@ -53,11 +53,11 @@ Material:
         second: 10.000001
       data:
         first:
-          name: _Emission
+          name: _InvFade
         second: 1
       data:
         first:
-          name: _InvFade
+          name: _Emission
         second: 1
       data:
         first:
@@ -69,16 +69,16 @@ Material:
         second: 0
       data:
         first:
+          name: _DistortIllum
+        second: 5.23000002
+      data:
+        first:
           name: _FPOW
         second: 3
       data:
         first:
           name: _R0
         second: .100000001
-      data:
-        first:
-          name: _DistortIllum
-        second: 5.23000002
       data:
         first:
           name: _Height

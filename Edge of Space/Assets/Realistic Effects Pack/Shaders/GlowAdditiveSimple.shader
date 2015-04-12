@@ -3,8 +3,8 @@ Shader "Effects/GlowAdditiveSimple" {
 	_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
 	_CoreColor ("Core Color", Color) = (0.5,0.5,0.5,0.5)
 	_MainTex ("Particle Texture", 2D) = "white" {}
-	_TintStrength ("Tint Color Strength", Range(0, 5)) = 1
-	_CoreStrength ("Core Color Strength", Range(0, 8)) = 1
+	_TintStrength ("Tint Color Strength", Float) = 1
+	_CoreStrength ("Core Color Strength", Float) = 1
 	_CutOutLightCore ("CutOut Light Core", Range(0, 1)) = 0.5
 	
 }
@@ -12,8 +12,6 @@ Shader "Effects/GlowAdditiveSimple" {
 Category {
 	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
 	Blend SrcAlpha One
-	AlphaTest Greater .01
-	ColorMask RGB
 	Cull Off 
 	Lighting Off 
 	ZWrite Off 

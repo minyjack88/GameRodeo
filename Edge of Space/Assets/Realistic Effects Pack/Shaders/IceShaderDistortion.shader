@@ -13,20 +13,18 @@ Properties {
         _R0("R0 Fresnel", Float) = 0.05
 		_Cutoff ("Cutoff [0-1]", Range (0, 1)) = 0.5
 		_LightStr ("Light strength [0-1]", Range (0, 1)) = 1
-		_BumpAmt ("Distortion", range (0,500)) = 10
+		_BumpAmt ("Distortion", Float) = 10
 }
 
 SubShader {
-        Tags { "Queue"="Transparent+1" "RenderType"="Transperent" }
+        Tags { "Queue"="Transparent+1" "IgnoreProjector"="True"  "RenderType"="Transperent" }
 		GrabPass {"_GrabTexture"}		
         LOD 200
 		ZWrite On
 
 CGPROGRAM
-// Upgrade NOTE: excluded shader from OpenGL ES 2.0 because it does not contain a surface program or both vertex and fragment programs.
-#pragma exclude_renderers gles
-#pragma vertex vert
-#pragma surface surf BlinnPhong alpha
+
+#pragma surface surf BlinnPhong alpha vertex:vert
 #pragma target 3.0
 #pragma glsl
 

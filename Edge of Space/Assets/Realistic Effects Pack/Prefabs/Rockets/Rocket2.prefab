@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.661748588, y: .919147611, z: -10.7434988}
+  m_LocalPosition: {x: .074000001, y: 1.56900001, z: -6.41499996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -89,8 +89,8 @@ MonoBehaviour:
   MoveDistance: 20
   IsHomingMove: 1
   IsVisible: 1
-  DeactivateAfterCollision: 0
-  DeactivateTimeDelay: 2
+  DeactivateAfterCollision: 1
+  DeactivateTimeDelay: 5
   LayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

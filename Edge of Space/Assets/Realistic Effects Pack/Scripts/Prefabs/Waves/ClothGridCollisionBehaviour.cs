@@ -69,7 +69,7 @@ public class ClothGridCollisionBehaviour : MonoBehaviour
    
     var point = CenterPoint();
     var raycastHit = new RaycastHit();
-    var distance = Vector3.Distance(point, targetPos);
+    var distance = Vector3.Distance(point, targetPos);Debug.DrawLine(point, targetPos);
     var distanceNextFrame = effectSettings.MoveSpeed * Time.deltaTime;
     if (distanceNextFrame > distance)
       distanceNextFrame = distance;

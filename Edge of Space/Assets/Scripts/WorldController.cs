@@ -65,8 +65,9 @@ public class WorldController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		foreach (var go in _allGOs)
+		for (int i = 0; i < _allGOs.Count; i++)
 		{
+			var go = _allGOs[i];
 			if (go == null)
 			{
 				_allGOs.Remove(go);
@@ -74,20 +75,44 @@ public class WorldController : MonoBehaviour
 			}
 			var goRigid = go.GetComponent<Rigidbody2D>();
 			float goInitialDistance = go.GetComponent<SpawnableGO>().InitialDistance;
-			
+
 			var step1 = go.transform.position - transform.position;
 			var step2 = new Vector2(step1.y, -step1.x);
 			var c = (Vector2)(transform.position) + step2;
-			
+
 			var targetDirection = (Vector2)go.transform.position - c * 0.02f;
-//			var targetDirection = Vector2.zero;
+			//			var targetDirection = Vector2.zero;
 
 			float dist = Vector2.Distance(transform.position, go.transform.position);
-			
+
 			targetDirection += CalcBouyancy(go, goInitialDistance, goRigid, dist, targetDirection);
 
 			goRigid.AddForce(targetDirection);
 		}
+
+//		foreach (var go in _allGOs)
+//		{
+//			if (go == null)
+//			{
+//				_allGOs.Remove(go);
+//				continue;
+//			}
+//			var goRigid = go.GetComponent<Rigidbody2D>();
+//			float goInitialDistance = go.GetComponent<SpawnableGO>().InitialDistance;
+//			
+//			var step1 = go.transform.position - transform.position;
+//			var step2 = new Vector2(step1.y, -step1.x);
+//			var c = (Vector2)(transform.position) + step2;
+//			
+//			var targetDirection = (Vector2)go.transform.position - c * 0.02f;
+////			var targetDirection = Vector2.zero;
+//
+//			float dist = Vector2.Distance(transform.position, go.transform.position);
+//			
+//			targetDirection += CalcBouyancy(go, goInitialDistance, goRigid, dist, targetDirection);
+//
+//			goRigid.AddForce(targetDirection);
+//		}
 
 	}
 	Vector2 CalcBouyancy (GameObject go, float preSetDistance, Rigidbody2D goRigid, float dist, Vector2 targetDirection) {

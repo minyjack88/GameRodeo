@@ -89,7 +89,7 @@ MonoBehaviour:
   MoveDistance: 20
   IsHomingMove: 0
   IsVisible: 1
-  DeactivateAfterCollision: 0
+  DeactivateAfterCollision: 1
   DeactivateTimeDelay: 1
   LayerMask:
     serializedVersion: 2

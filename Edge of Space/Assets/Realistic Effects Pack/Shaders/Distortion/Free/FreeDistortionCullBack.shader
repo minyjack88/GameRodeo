@@ -7,8 +7,6 @@ Shader "Effects/Distortion/Free/CullBack" {
 Category {
 	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
 	Blend SrcAlpha One
-	AlphaTest Greater .01
-	ColorMask RGB
 	Cull Back 
 	Lighting Off 
 	ZWrite Off 

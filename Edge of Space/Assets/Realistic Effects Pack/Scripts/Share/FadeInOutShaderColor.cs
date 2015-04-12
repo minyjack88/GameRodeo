@@ -19,7 +19,7 @@ public class FadeInOutShaderColor : MonoBehaviour
   private Color oldColor, currentColor;
   private float oldAlpha, alpha;
   private bool canStart, canStartFadeOut, fadeInComplited, fadeOutComplited;
-  private bool isCollisionEnter, allComplited;
+  private bool isCollisionEnter;
   private bool isStartDelay, isIn, isOut;
   private EffectSettings effectSettings;
   private bool isInitialized;
@@ -55,7 +55,20 @@ public class FadeInOutShaderColor : MonoBehaviour
   {
     if (isInitialized) return;
     if (GetComponent<Renderer>()!=null) mat = GetComponent<Renderer>().material;
-    else if(mat == null) return;
+    else {
+      var lineRenderer = GetComponent<LineRenderer>();
+      if (lineRenderer!=null) mat = lineRenderer.material;
+      else {
+        var projector = GetComponent<Projector>();
+        if (projector!=null) {
+          if (!projector.material.name.EndsWith("(Instance)"))
+            projector.material = new Material(projector.material) { name = projector.material.name + " (Instance)" };
+          mat = projector.material;
+        }
+      }
+    }
+    
+    if(mat == null) return;
    
     oldColor = mat.GetColor(ShaderColorName);
     isStartDelay = StartDelay > 0.001f;
@@ -70,7 +83,6 @@ public class FadeInOutShaderColor : MonoBehaviour
   {
     fadeInComplited = false;
     fadeOutComplited = false;
-    allComplited = false;
     canStartFadeOut = false;
     isCollisionEnter = false;
     oldAlpha = 0;
@@ -114,26 +126,43 @@ public class FadeInOutShaderColor : MonoBehaviour
   {
     if (!canStart)
       return;
-   
-    if (effectSettings != null && UseHideStatus && allComplited && effectSettings.IsVisible)
+
+    if (effectSettings != null && UseHideStatus)
     {
-      allComplited = false;
-      fadeInComplited = false;
-      fadeOutComplited = false;
-      InitDefaultVariables();
+      if (!effectSettings.IsVisible && fadeInComplited)
+        fadeInComplited = false;
+      if (effectSettings.IsVisible && fadeOutComplited)
+        fadeOutComplited = false;
     }
 
-    if (isIn && !fadeInComplited) {
-      if(effectSettings == null) FadeIn();
-      else if ((UseHideStatus && effectSettings.IsVisible) || !UseHideStatus) FadeIn();
+    if (UseHideStatus) {
+      if (isIn) {
+        if (effectSettings!=null && effectSettings.IsVisible && !fadeInComplited)
+          FadeIn();
+      }
+      if (isOut) {
+        if (effectSettings!=null && !effectSettings.IsVisible && !fadeOutComplited)
+          FadeOut();
+      }
     }
-    
-    if (!isOut || fadeOutComplited || !canStartFadeOut)
-      return;
-    if (effectSettings == null || (!UseHideStatus && !FadeOutAfterCollision))
-      FadeOut();
-    else if ((UseHideStatus && !effectSettings.IsVisible) || isCollisionEnter)
-      FadeOut();
+    else if (!FadeOutAfterCollision) {
+      if (isIn) {
+        if (!fadeInComplited)
+          FadeIn();
+      }
+      if (isOut && canStartFadeOut) {
+        if (!fadeOutComplited)
+          FadeOut();
+      }
+    }
+    else {
+      if (isIn) {
+        if (!fadeInComplited)
+          FadeIn();
+      }
+      if (isOut && isCollisionEnter && canStartFadeOut && !fadeOutComplited)
+        FadeOut();
+    }
   }
 
 
@@ -142,7 +171,6 @@ public class FadeInOutShaderColor : MonoBehaviour
     alpha = oldAlpha + Time.deltaTime / FadeInSpeed;
     if (alpha >= oldColor.a) {
       fadeInComplited = true; 
-      if (!isOut) allComplited = true;
       alpha = oldColor.a;
       Invoke("SetupFadeOutDelay", FadeOutDelay);
     } 
@@ -157,7 +185,6 @@ public class FadeInOutShaderColor : MonoBehaviour
     if (alpha <= 0) {
       alpha = 0;
       fadeOutComplited = true;
-     allComplited = true;
     }
     currentColor.a = alpha;
     mat.SetColor(ShaderColorName, currentColor);

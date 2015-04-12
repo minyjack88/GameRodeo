@@ -68,6 +68,14 @@ Material:
         second: 1
       data:
         first:
+          name: _FPOW
+        second: 5
+      data:
+        first:
+          name: _R0
+        second: .0500000007
+      data:
+        first:
           name: _TintStrength
         second: 1.07142866
       data:
@@ -78,14 +86,6 @@ Material:
         first:
           name: _CutOutLightCore
         second: 0
-      data:
-        first:
-          name: _FPOW
-        second: 5
-      data:
-        first:
-          name: _R0
-        second: .0500000007
       data:
         first:
           name: _Height
@@ -106,7 +106,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .676470578, g: .799188733, b: 1, a: 1}
+        second: {r: .338992208, g: .4753685, b: .698529422, a: 1}
       data:
         first:
           name: _SpecColor

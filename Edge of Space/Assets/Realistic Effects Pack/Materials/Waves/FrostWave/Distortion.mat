@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Distortion
-  m_Shader: {fileID: 4800000, guid: 35899aecb0eb48e47be6d51365a94cce, type: 3}
+  m_Shader: {fileID: 4800000, guid: 652c2a99c6cba874ca99f3e5bd619e1c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -35,7 +35,18 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _CutOut
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
+      data:
+        first:
+          name: _InvFade
+        second: 1.53571427
       data:
         first:
           name: _ColorStrength
@@ -43,7 +54,7 @@ Material:
       data:
         first:
           name: _BumpAmt
-        second: 44.6428566
+        second: 50
       data:
         first:
           name: _DistortIllum
@@ -52,4 +63,8 @@ Material:
       data:
         first:
           name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _TintColor
         second: {r: 1, g: 1, b: 1, a: 1}

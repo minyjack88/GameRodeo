@@ -14,9 +14,9 @@ public class FadeInOutShaderFloat : MonoBehaviour
   
   private Material OwnMaterial;
   private Material mat;
-  private float oldFloat, currentFloat, startFloat;
-  private bool canStart, canStartFadeOut, fadeInComplited, fadeOutComplited;
-  private bool isCollisionEnter, allComplited;
+  private float oldFloat, currentFloat;
+  private bool canStart, canStartFadeOut, fadeInComplited, fadeOutComplited, previousFrameVisibleStatus;
+  private bool isCollisionEnter;
   private bool isStartDelay, isIn, isOut;
   private EffectSettings effectSettings;
   private bool isInitialized;
@@ -51,8 +51,22 @@ public class FadeInOutShaderFloat : MonoBehaviour
   private void InitMaterial()
   {
     if (isInitialized) return;
-    if( GetComponent<Renderer>()!=null) mat = GetComponent<Renderer>().material;
-    else if (mat == null) return;
+    if (GetComponent<Renderer>() != null) mat = GetComponent<Renderer>().material;
+    else
+    {
+      var lineRenderer = GetComponent<LineRenderer>();
+      if (lineRenderer != null) mat = lineRenderer.material;
+      else
+      {
+        var projector = GetComponent<Projector>();
+        if (projector != null) {
+          if (!projector.material.name.EndsWith("(Instance)"))
+            projector.material = new Material(projector.material) {name = projector.material.name + " (Instance)"};
+          mat = projector.material;
+        }
+      }
+    }
+    if (mat == null) return;
    
     isStartDelay = StartDelay > 0.001f;
     isIn = FadeInSpeed > 0.001f;
@@ -65,8 +79,8 @@ public class FadeInOutShaderFloat : MonoBehaviour
   {
     fadeInComplited = false;
     fadeOutComplited = false;
-    allComplited = false;
     canStartFadeOut = false;
+    canStart = false;
     isCollisionEnter = false;
     oldFloat = 0;
     currentFloat = MaxFloat;
@@ -110,26 +124,41 @@ public class FadeInOutShaderFloat : MonoBehaviour
     if (!canStart)
       return;
 
-    if (effectSettings != null && UseHideStatus && allComplited && effectSettings.IsVisible)
-    {
-      allComplited = false;
-      fadeInComplited = false;
-      fadeOutComplited = false;
-      InitDefaultVariables();
+    if (effectSettings != null && UseHideStatus) {
+      if (!effectSettings.IsVisible && fadeInComplited)
+        fadeInComplited = false;
+      if (effectSettings.IsVisible && fadeOutComplited)
+        fadeOutComplited = false;
     }
 
-    if (isIn && !fadeInComplited)
-    {
-      if (effectSettings == null) FadeIn();
-      else if ((UseHideStatus && effectSettings.IsVisible) || !UseHideStatus) FadeIn();
+    if (UseHideStatus) {
+      if (isIn) {
+        if (effectSettings!=null && effectSettings.IsVisible && !fadeInComplited)
+          FadeIn();
+      }
+      if (isOut) {
+        if (effectSettings!=null && !effectSettings.IsVisible && !fadeOutComplited)
+          FadeOut();
+      }
     }
-
-    if (!isOut || fadeOutComplited || !canStartFadeOut)
-      return;
-    if (effectSettings==null || (!UseHideStatus && !FadeOutAfterCollision))
-      FadeOut();
-    else if ((UseHideStatus && !effectSettings.IsVisible) || isCollisionEnter)
-      FadeOut();
+    else if (!FadeOutAfterCollision) {
+      if (isIn) {
+        if (!fadeInComplited)
+          FadeIn();
+      }
+      if (isOut && canStartFadeOut) {
+        if (!fadeOutComplited)
+          FadeOut();
+      }
+    }
+    else {
+      if (isIn) {
+        if (!fadeInComplited)
+          FadeIn();
+      }
+      if (isOut && isCollisionEnter && canStartFadeOut && !fadeOutComplited)
+        FadeOut();
+    }
   }
 
 
@@ -139,7 +168,6 @@ public class FadeInOutShaderFloat : MonoBehaviour
     if (currentFloat >= MaxFloat)
     {
       fadeInComplited = true;
-      if (!isOut) allComplited = true;
       currentFloat = MaxFloat;
       Invoke("SetupFadeOutDelay", FadeOutDelay);
     }
@@ -155,7 +183,6 @@ public class FadeInOutShaderFloat : MonoBehaviour
     {
       currentFloat = 0;
       fadeOutComplited = true;
-      allComplited = true;
     }
 
     mat.SetFloat(PropertyName, currentFloat);

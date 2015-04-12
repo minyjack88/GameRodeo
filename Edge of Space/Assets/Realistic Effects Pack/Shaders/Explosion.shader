@@ -10,11 +10,16 @@
 	_InvFade ("Soft Particles Factor", Range(0.01,3.0)) = 1.0
 }
 
+Category {Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
+	Blend SrcAlpha One
+				Cull Off 
+				Lighting Off 
+				ZWrite Off
+
 	SubShader {
 	Pass {
-				Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
-				Blend SrcAlpha One
-				Cull Off Lighting Off ZWrite Off
+				
+				
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -144,3 +149,4 @@
 	}	
 }
 
+}

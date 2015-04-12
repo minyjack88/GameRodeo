@@ -18,32 +18,36 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: ab38baf105a48c44d9bc1a696bf2d122, type: 3}
+          m_Texture: {fileID: 2800000, guid: f9bb0fc00d645b74a9f69161d166cbc6, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 1b5c16bcd3b85144ba483a02bbaaacbb, type: 3}
+          m_Texture: {fileID: 2800000, guid: c8b3e5216f13f1248a0857a10afc8fad, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _CutOut
         second:
-          m_Texture: {fileID: 2800000, guid: a345823fbeed94346a92425d34c78dec, type: 3}
+          m_Texture: {fileID: 2800000, guid: 1d62f518f1473c448b30f4b038491910, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
+          name: _InvFade
+        second: 1.375
+      data:
+        first:
           name: _ColorStrength
-        second: .100000001
+        second: 0
       data:
         first:
           name: _BumpAmt
-        second: 28.5714283
+        second: 30
     m_Colors:
       data:
         first:

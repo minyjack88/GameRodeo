@@ -56,6 +56,10 @@ Material:
         second: {r: .406085283, g: .29411763, b: 1, a: 1}
       data:
         first:
+          name: _EmisColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
+      data:
+        first:
           name: _TintColorR
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
@@ -66,7 +70,3 @@ Material:
         first:
           name: _TintColorB
         second: {r: .595588207, g: .682048678, b: 1, a: 1}
-      data:
-        first:
-          name: _EmisColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}

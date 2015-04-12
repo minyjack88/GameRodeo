@@ -112,7 +112,7 @@ public class FadeInOutLight : MonoBehaviour
       return;
     if (effectSettings == null || (!UseHideStatus && !FadeOutAfterCollision))
       FadeOut();
-    else if ((UseHideStatus && !effectSettings.IsVisible) || isCollisionEnter)
+    else if ((UseHideStatus && !effectSettings.IsVisible) || FadeOutAfterCollision && isCollisionEnter)
       FadeOut();
   }
 
