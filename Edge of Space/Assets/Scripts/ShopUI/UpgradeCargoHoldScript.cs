@@ -3,6 +3,8 @@ using System.Collections;
 
 public class UpgradeCargoHoldScript : UpgradeScript
 {
+	[SerializeField] private AudioClip buySoundClip;
+	[SerializeField] private AudioSource mySource;
 
     // Use this for initialization
     void Start()
@@ -18,6 +20,8 @@ public class UpgradeCargoHoldScript : UpgradeScript
 
     public override void UpdateUpgradeInfo()
     {
+		mySource.clip = buySoundClip;
+		mySource.Play();
         switch (level)
         {
             case 1:

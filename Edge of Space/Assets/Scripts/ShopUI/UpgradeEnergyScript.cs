@@ -3,6 +3,10 @@ using System.Collections;
 
 public class UpgradeEnergyScript : UpgradeScript
 {
+	[SerializeField]
+	private AudioClip buySoundClip;
+	[SerializeField]
+	private AudioSource mySource;
 
     // Use this for initialization
     void Start()
@@ -18,6 +22,8 @@ public class UpgradeEnergyScript : UpgradeScript
 
     public override void UpdateUpgradeInfo()
     {
+		mySource.clip = buySoundClip;
+		mySource.Play();
         switch (level)
         {
             case 1:

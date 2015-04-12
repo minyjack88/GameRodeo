@@ -41,6 +41,10 @@ public class ShopScript : MonoBehaviour
     [SerializeField]
     private Text resourceText;
 
+	[SerializeField] private AudioClip rechargeClip;
+	[SerializeField] private AudioClip buySoundClip;
+	[SerializeField] private AudioSource mySource;
+
     public int blinkConsumableCost;
     public int boostConsumableCost;
     public int energyConsumableCost;
@@ -50,7 +54,7 @@ public class ShopScript : MonoBehaviour
     void Start() 
     {
         inventory = player.GetComponent<Inventory>();
-
+		
         BlinkConsumableDescriptionText.text = "Consumable: Blink" + System.Environment.NewLine
         + "Instant travel to a nearby location." + System.Environment.NewLine
         + "Cost: " + blinkConsumableCost + System.Environment.NewLine
@@ -81,6 +85,8 @@ public class ShopScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+	        mySource.clip = rechargeClip;
+			mySource.Play();
             Debug.Log("Collision with the base.");
             SellCargo();
             player.GetComponent<EnergyCore>().ResetPower();
@@ -139,6 +145,9 @@ public class ShopScript : MonoBehaviour
         {
             inventory.blinkConsumables++;
             inventory.money -= blinkConsumableCost;
+	        mySource.clip = buySoundClip;
+			mySource.Play();
+
         }
     }
 
@@ -148,6 +157,8 @@ public class ShopScript : MonoBehaviour
         {
             inventory.boostConsumables++;
             inventory.money -= boostConsumableCost;
+			mySource.clip = buySoundClip;
+			mySource.Play();
         }
     }
 
@@ -157,6 +168,8 @@ public class ShopScript : MonoBehaviour
         {
             inventory.energyConsumables++;
             inventory.money -= energyConsumableCost;
+			mySource.clip = buySoundClip;
+			mySource.Play();
         }
     }
 }
