@@ -19,6 +19,10 @@ public class SpaceShip : MonoBehaviour
 
 	[SerializeField] private WorldController worldController;
 
+	[SerializeField] private Inventory inventory;
+
+	public bool isBoosted = false;
+
 	private WorldController WorldController
 	{
 		get
@@ -29,10 +33,6 @@ public class SpaceShip : MonoBehaviour
 		}
 	}
 
-	void Start()
-	{
-
-	}
 
     void Awake()
     {
@@ -76,14 +76,23 @@ public class SpaceShip : MonoBehaviour
 		if (CurrentPressure > 0)
 		{
 			MyEnergyCore.DoDamage(CurrentPressure);
-			_camVignette.intensity = Mathf.Lerp(0, 20, CurrentPressure / WorldController._radius);
-			print(CurrentPressure / WorldController._radius);
 
+
+			float myLevel = MyEnergyCore.GetEnergyLevel();
+			float val = (inventory.baseEnergy/myLevel) - 1;
+			print(val);
+			_camVignette.intensity = Mathf.Lerp(0, 20, val); // use current energy upgrade level
+			
+//			GetComponent<Inventory>().baseEnergy
+//			CurrentPressure/WorldController._radius;
+
+
+//			_camVignette.intensity = Mathf.Lerp(0, 20, CurrentPressure / WorldController._radius); // use current energy upgrade level
 		}
 		else
 		{
             if (_camVignette != null)
-			_camVignette.intensity = 0;
+				_camVignette.intensity = 0;
 		}
 
 
